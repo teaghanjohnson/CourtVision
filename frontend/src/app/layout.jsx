@@ -1,9 +1,14 @@
 import "./globals.css";
-
-export default function RootLayout({ children }) {
+import Link from "next/link";
+export default function Layout({ children }) {
   return (
     <html>
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body>
+        <nav>
+          <Link href="/teams">Enter</Link>
+        </nav>
+        {children}
+      </body>
     </html>
   );
 }
