@@ -108,7 +108,7 @@ export default function InertiaLogo({ size = 460 }) {
       let startProgress;
 
       spin = gsap.to(logo.rotation, {
-        y: "+=" + Math.PI * 2,
+        y: "-=" + Math.PI * 2,
         duration: 9,
         ease: "none",
         repeat: -1,

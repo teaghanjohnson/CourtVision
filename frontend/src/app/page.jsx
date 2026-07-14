@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import AnimatedLetters from "@/components/AnimatedLetters";
 import InertiaLogo from "@/components/InertiaLogo";
+import Image from "next/image";
 
 export default function Page() {
   const [letterClass, setLetterClass] = useState("text-animate");
@@ -74,24 +75,41 @@ export default function Page() {
   }, []);
   return (
     <>
-      <div className="flex flex-col items-center justify-center min-h-screen text-center">
-        <InertiaLogo size={500} />
-        <div className="text-3xl text-center font-bold text-white">
-          <AnimatedLetters
-            letterClass={letterClass}
-            strArray={nameArray}
-            idx={1}
+      <div className="flex flex-row">
+        <div className="flex flex-col">
+          <Image
+            src="/cv-title-logo.png"
+            alt="CourtVision logo"
+            width={500}
+            height={500}
           />
+          <div
+            className="ml-10 text-4xl font-bold text-white"
+            style={{ fontFamily: "Coolvetica, Arial, sans-serif" }}
+          >
+            <AnimatedLetters
+              letterClass={letterClass}
+              strArray={nameArray}
+              idx={1}
+            />
+          </div>
+          <div
+            className="ml-10 text-rg text-white subtitle-fade"
+            style={{ fontFamily: "Coolvetica, Arial, sans-serif" }}
+          >
+            {subArray.join("")}
+          </div>
+          <Link
+            href="/teams"
+            className="w-25 ml-10 text-white text-[13px] font-bold tracking-[4px] font-sans no-underline py-[10px] px-[18px] rounded-[7px] bg-[#5faceb] mt-[25px] float-left whitespace-nowrap transition-all duration-300 ease-in-out hover:bg-white hover:text-[#5faceb]"
+          >
+            Enter
+          </Link>
         </div>
-        <div className="text-lg text-center text-white subtitle-fade">
-          {subArray.join("")}
+
+        <div className="flex  justify-center min-h-screen text-center">
+          <InertiaLogo size={500} />
         </div>
-        <Link
-          href="/teams"
-          className="text-white text-[13px] font-bold tracking-[4px] font-sans no-underline py-[10px] px-[18px] rounded-[7px] bg-[#5faceb] mt-[25px] float-left whitespace-nowrap transition-all duration-300 ease-in-out hover:bg-white hover:text-[#5faceb]"
-        >
-          Enter
-        </Link>
       </div>
     </>
   );

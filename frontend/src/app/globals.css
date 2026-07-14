@@ -1,9 +1,40 @@
 @import "tailwindcss";
 @import "animate.css";
 
+@font-face {
+  font-family: "Affigere";
+  src:
+    url("/fonts/Affigere-Regular.woff2") format("woff2"),
+    url("/fonts/Affigere-Regular.woff") format("woff"),
+    url("/fonts/Affigere-Regular.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Egyptienne";
+  src:
+    url("/fonts/EgyptienneLarge-Regular.otf") format("otf"),
+    url("/fonts/EgyptienneLarge-Regular.woff") format("woff"),
+    url("/fonts/EgyptienneLarge-Regular.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Coolvetica";
+  src:
+    url("/fonts/CoolveticaRg-Regular.woff2") format("woff2"),
+    url("/fonts/CoolveticaRg-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 body {
   background: linear-gradient(to bottom, #ec9c67);
-  overflow: hidden;
   display: block;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
