@@ -1,13 +1,12 @@
 @import "tailwindcss";
-
-:root {
-  --background: #fbfbfb;
-  --foreground: #111111;
-}
+@import "animate.css";
 
 body {
-  background: var(--background);
-  color: var(--foreground);
+  background: linear-gradient(to bottom, #ec9c67);
+  overflow: hidden;
+  display: block;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   font-family: Arial, Helvetica, sans-serif;
 }
 

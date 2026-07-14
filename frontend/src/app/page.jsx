@@ -1,9 +1,9 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Image from "next/image";
 import Link from "next/link";
 import AnimatedLetters from "@/components/AnimatedLetters";
+import InertiaLogo from "@/components/InertiaLogo";
 
 export default function Page() {
   const [letterClass, setLetterClass] = useState("text-animate");
@@ -75,27 +75,20 @@ export default function Page() {
   return (
     <>
       <div className="flex flex-col items-center justify-center min-h-screen text-center">
-        <Image
-          src="/courtvision-logo.png"
-          alt="Court Vision Logo"
-          width={500}
-          height={500}
-          priority
-          className="w-[500px] h-[500px]"
-        />
-        <div className="text-3xl text-center font-bold text-black">
+        <InertiaLogo size={500} />
+        <div className="text-3xl text-center font-bold text-white">
           <AnimatedLetters
             letterClass={letterClass}
             strArray={nameArray}
             idx={1}
           />
         </div>
-        <div className="text-lg text-center text-black subtitle-fade">
+        <div className="text-lg text-center text-white subtitle-fade">
           {subArray.join("")}
         </div>
         <Link
           href="/teams"
-          className="text-white text-[13px] font-normal tracking-[4px] font-sans no-underline py-[10px] px-[18px] rounded-[7px] bg-[#5faceb] mt-[25px] float-left whitespace-nowrap"
+          className="text-white text-[13px] font-bold tracking-[4px] font-sans no-underline py-[10px] px-[18px] rounded-[7px] bg-[#5faceb] mt-[25px] float-left whitespace-nowrap transition-all duration-300 ease-in-out hover:bg-white hover:text-[#5faceb]"
         >
           Enter
         </Link>
