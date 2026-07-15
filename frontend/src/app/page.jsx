@@ -76,12 +76,13 @@ export default function Page() {
   return (
     <>
       <div className="flex flex-row">
-        <div className="flex flex-col">
+        <div className="flex flex-col justify-center image-fade">
           <Image
             src="/cv-title-logo.png"
             alt="CourtVision logo"
             width={500}
-            height={500}
+            height={73}
+            priority
           />
           <div
             className="ml-10 text-4xl font-bold text-white"
@@ -101,13 +102,13 @@ export default function Page() {
           </div>
           <Link
             href="/teams"
-            className="w-25 ml-10 text-white text-[13px] font-bold tracking-[4px] font-sans no-underline py-[10px] px-[18px] rounded-[7px] bg-[#5faceb] mt-[25px] float-left whitespace-nowrap transition-all duration-300 ease-in-out hover:bg-white hover:text-[#5faceb]"
+            className="w-22 ml-10 text-center text-white text-[13px] font-bold tracking-[4px] font-sans no-underline py-[10px] px-[18px] rounded-[7px] bg-[#5faceb] mt-[25px] float-left whitespace-nowrap transition-all duration-300 ease-in-out hover:bg-white hover:text-[#5faceb]"
           >
             Enter
           </Link>
         </div>
 
-        <div className="flex  justify-center min-h-screen text-center">
+        <div className="flex mt-25 ml-15 justify-items-center justify-center min-h-screen text-center">
           <InertiaLogo size={500} />
         </div>
       </div>

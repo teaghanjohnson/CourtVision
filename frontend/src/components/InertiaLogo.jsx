@@ -10,6 +10,7 @@ gsap.registerPlugin(Draggable, InertiaPlugin);
 
 export default function InertiaLogo({ size = 460 }) {
   const containerRef = useRef(null);
+  const bgRef = useRef(null);
 
   useEffect(() => {
     const container = containerRef.current;
@@ -155,17 +156,58 @@ export default function InertiaLogo({ size = 460 }) {
     };
   }, []);
 
+  useEffect(() => {
+    const tl = gsap.timeline();
+    tl.to(bgRef.current, {
+      duration: 1,
+      opacity: 1,
+    });
+    gsap.fromTo(
+      containerRef.current,
+      {
+        opacity: 0,
+      },
+      {
+        opacity: 1,
+        delay: 4,
+        duration: 4,
+      },
+    );
+  }, []);
+
   return (
     <div
-      ref={containerRef}
       style={{
+        position: "relative",
         width: size,
         height: size,
         maxWidth: "62vw",
         maxHeight: "62vw",
-        cursor: "grab",
-        touchAction: "pan-y",
       }}
-    />
+    >
+      <div
+        ref={bgRef}
+        style={{
+          position: "absolute",
+          inset: 0,
+          borderRadius: "50%",
+          background:
+            "radial-gradient(circle, rgba(95,172,235,0.35), transparent 70%)",
+          opacity: 0,
+          pointerEvents: "none",
+        }}
+      />
+      <div
+        ref={containerRef}
+        style={{
+          position: "relative",
+          width: "100%",
+          height: "100%",
+          opacity: 0,
+          cursor: "grab",
+          touchAction: "pan-y",
+        }}
+      />
+    </div>
   );
 }
