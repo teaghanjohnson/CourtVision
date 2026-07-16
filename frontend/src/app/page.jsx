@@ -78,7 +78,7 @@ export default function Page() {
       <div className="flex flex-row">
         <div className="flex flex-col justify-center image-fade">
           <Image
-            src="/cv-title-logo.png"
+            src="/courtvision-title-logo.png"
             alt="CourtVision logo"
             width={500}
             height={73}
