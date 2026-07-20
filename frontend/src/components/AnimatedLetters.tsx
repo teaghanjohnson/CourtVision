@@ -1,7 +1,13 @@
 import "animate.css";
 import "./AnimatedLetters.css";
 
-const AnimatedLetters = ({ letterClass, strArray, idx }) => {
+interface AnimatedLettersProps {
+  letterClass: string;
+  strArray: string[];
+  idx: number;
+}
+
+const AnimatedLetters = ({ letterClass, strArray, idx }: AnimatedLettersProps) => {
   return (
     <span>
       {strArray.map((char, i) => (

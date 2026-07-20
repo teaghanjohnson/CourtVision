@@ -7,8 +7,8 @@ import InertiaLogo from "@/components/InertiaLogo";
 import Image from "next/image";
 
 export default function Page() {
-  const [letterClass, setLetterClass] = useState("text-animate");
-  const nameArray = [
+  const [letterClass, setLetterClass] = useState<string>("text-animate");
+  const nameArray: string[] = [
     "T",
     "h",
     "e",
@@ -31,7 +31,7 @@ export default function Page() {
     "s",
     "y",
   ];
-  const subArray = [
+  const subArray: string[] = [
     "A",
     " ",
     "N",

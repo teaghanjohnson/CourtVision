@@ -1,6 +1,41 @@
 // NBA team color palettes: [primary, secondary, tertiary]
+export type TeamAbbrev =
+  | "NBA"
+  | "ATL"
+  | "BOS"
+  | "BRK"
+  | "CHO"
+  | "CHI"
+  | "CLE"
+  | "DAL"
+  | "DEN"
+  | "DET"
+  | "GSW"
+  | "HOU"
+  | "IND"
+  | "LAC"
+  | "LAL"
+  | "MEM"
+  | "MIA"
+  | "MIL"
+  | "MIN"
+  | "NOP"
+  | "NYK"
+  | "OKC"
+  | "ORL"
+  | "PHI"
+  | "PHO"
+  | "POR"
+  | "SAC"
+  | "SAS"
+  | "TOR"
+  | "UTA"
+  | "WAS";
+
+export type TeamColorTriple = [primary: string, secondary: string, tertiary: string];
+
 // Ported from nba-match-predictor/utils/constants/constants.py
-export const TEAM_COLORS = {
+export const TEAM_COLORS: Record<TeamAbbrev, TeamColorTriple> = {
   NBA: ["#17408B", "#C9082A", "#FFFFFF"], // NBA Default: Blue, Red, White
   ATL: ["#c8102e", "#ffcd00", "#FFFFFF"], // Hawks: Red, Volt Green, Charcoal
   BOS: ["#007A33", "#BA9653", "#000000"], // Celtics: Green, Gold, Black
@@ -35,7 +70,14 @@ export const TEAM_COLORS = {
 };
 
 // League-wide theme, used for chrome/UI that isn't team-specific
-export const THEME = {
+export const THEME: {
+  primary: string;
+  background: string;
+  secondaryBg: string;
+  text: string;
+  success: string;
+  error: string;
+} = {
   primary: "#C9082A", // nba red
   background: "#17408B", // nba blue
   secondaryBg: "#1D4F91", // lighter blue
@@ -45,7 +87,7 @@ export const THEME = {
 };
 
 // Full team name -> abbreviation, matches the logo filenames in /public/images
-export const TEAM_MAP = {
+export const TEAM_MAP: Record<string, TeamAbbrev> = {
   "Atlanta Hawks": "ATL",
   "Boston Celtics": "BOS",
   "Brooklyn Nets": "BRK",
@@ -79,11 +121,11 @@ export const TEAM_MAP = {
 };
 
 // Path to a team's logo in /public/images (e.g. getTeamLogo('LAL') -> "/images/LAL.png")
-export function getTeamLogo(abbrev) {
+export function getTeamLogo(abbrev: string): string {
   return `/images/${abbrev}.png`;
 }
 
 // [primary, secondary, tertiary] hex colors for a team abbreviation
-export function getTeamColors(abbrev) {
+export function getTeamColors(abbrev: TeamAbbrev): TeamColorTriple {
   return TEAM_COLORS[abbrev] ?? TEAM_COLORS.NBA;
 }

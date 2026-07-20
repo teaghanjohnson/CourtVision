@@ -2,9 +2,6 @@ import { getTeamLogo, TEAM_MAP } from "@/constants/teamColors";
 import Image from "next/image";
 import Link from "next/link";
 
-const renderTeam = () => {
-  return <div></div>;
-};
 export default function teamGrid() {
   const teamEntries = Object.entries(TEAM_MAP);
   const teamCells = teamEntries.map(([teamName, team_abbrev]) => (

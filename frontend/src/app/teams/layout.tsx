@@ -1,8 +1,7 @@
+import type { ReactNode } from "react";
 import Sidebar from "@/components/Sidebar/Sidebar";
-import Image from "next/image";
-import Link from "next/link";
 
-export default function Layout({ children }) {
+export default function Layout({ children }: { children: ReactNode }) {
   return (
     <>
       <Sidebar />

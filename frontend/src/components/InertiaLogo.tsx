@@ -8,9 +8,13 @@ import InertiaPlugin from "gsap/InertiaPlugin";
 
 gsap.registerPlugin(Draggable, InertiaPlugin);
 
-export default function InertiaLogo({ size = 460 }) {
-  const containerRef = useRef(null);
-  const bgRef = useRef(null);
+interface InertiaLogoProps {
+  size?: number;
+}
+
+export default function InertiaLogo({ size = 460 }: InertiaLogoProps) {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const bgRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const container = containerRef.current;
@@ -48,13 +52,13 @@ export default function InertiaLogo({ size = 460 }) {
     rim.position.set(0, -100, -300);
     scene.add(rim);
 
-    let logo;
-    let spin;
-    let draggable;
-    let frameId;
+    let logo: THREE.Mesh | undefined;
+    let spin: gsap.core.Tween | undefined;
+    let draggable: Draggable | undefined;
+    let frameId: number;
 
     const loader = new THREE.TextureLoader();
-    loader.load("/courtvision-mark-cropped.png", (texture) => {
+    loader.load("/courtvision-mark-cropped.png", (texture: THREE.Texture) => {
       texture.colorSpace = THREE.SRGBColorSpace;
       texture.anisotropy = renderer.capabilities.getMaxAnisotropy();
 
@@ -96,9 +100,9 @@ export default function InertiaLogo({ size = 460 }) {
     animate();
 
     function handleResize() {
-      camera.aspect = container.clientWidth / container.clientHeight;
+      camera.aspect = container!.clientWidth / container!.clientHeight;
       camera.updateProjectionMatrix();
-      renderer.setSize(container.clientWidth, container.clientHeight);
+      renderer.setSize(container!.clientWidth, container!.clientHeight);
     }
     window.addEventListener("resize", handleResize);
 
@@ -106,19 +110,19 @@ export default function InertiaLogo({ size = 460 }) {
       const dragDistancePerRotation = 600;
       const progressWrap = gsap.utils.wrap(0, 1);
       const proxy = document.createElement("div");
-      let startProgress;
+      let startProgress = 0;
 
-      spin = gsap.to(logo.rotation, {
+      spin = gsap.to(logo!.rotation, {
         y: "-=" + Math.PI * 2,
         duration: 9,
         ease: "none",
         repeat: -1,
       });
 
-      function updateRotation() {
+      function updateRotation(this: Draggable) {
         const p =
           startProgress + (this.startX - this.x) / dragDistancePerRotation;
-        spin.progress(progressWrap(p));
+        spin!.progress(progressWrap(p));
       }
 
       [draggable] = Draggable.create(proxy, {
@@ -127,19 +131,19 @@ export default function InertiaLogo({ size = 460 }) {
         inertia: true,
         allowNativeTouchScrolling: true,
         onPress() {
-          gsap.killTweensOf(spin);
-          spin.timeScale(0);
-          startProgress = spin.progress();
+          gsap.killTweensOf(spin!);
+          spin!.timeScale(0);
+          startProgress = spin!.progress();
         },
         onDrag: updateRotation,
         onThrowUpdate: updateRotation,
         onRelease() {
           if (!this.tween || !this.tween.isActive()) {
-            gsap.to(spin, { timeScale: 1, duration: 1 });
+            gsap.to(spin!, { timeScale: 1, duration: 1 });
           }
         },
         onThrowComplete() {
-          gsap.to(spin, { timeScale: 1, duration: 1 });
+          gsap.to(spin!, { timeScale: 1, duration: 1 });
         },
       });
     }
