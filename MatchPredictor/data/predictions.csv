@@ -1,0 +1,3 @@
+date,home,home_abbrev,visitor,visitor_abbrev,predicted_winner,predicted_winner_abbrev,confidence,result,actual_winner
+2026-04-15,Los Angeles Clippers,LAC,Golden State Warriors,GSW,Los Angeles Clippers,LAC,0.5251913614182346,not_played,
+2026-04-15,Philadelphia 76ers,PHI,Orlando Magic,ORL,Philadelphia 76ers,PHI,0.5161485822657698,not_played,

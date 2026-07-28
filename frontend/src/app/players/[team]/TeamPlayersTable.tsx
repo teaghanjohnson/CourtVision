@@ -1,5 +1,6 @@
 "use client";
 
+import { div } from "framer-motion/client";
 import { useState } from "react";
 
 export type Player = {
@@ -76,6 +77,56 @@ export const COLUMNS: Column[] = [
   { key: "td", label: "TD" },
 ];
 
-export default function TeamPlayersTable() {
-  return <></>;
+export default function TeamPlayersTable({
+  players,
+  years,
+  defaultYear,
+}: {
+  players: Player[];
+  years: string[];
+  defaultYear: string;
+}) {
+  const [selectedYear, setSelectedYear] = useState(defaultYear);
+  const yearsDescending = [...years].reverse();
+  const filteredPlayers = players.filter((p) => p.year === selectedYear);
+
+  return (
+    <div>
+      <select
+        value={selectedYear}
+        onChange={(e) => setSelectedYear(e.target.value)}
+        className="mb-4 rounded border px-2 py-1"
+      >
+        {yearsDescending.map((year) => (
+          <option key={year} value={year}>
+            {year}
+          </option>
+        ))}
+      </select>
+      <div className="overflow-x-auto">
+        <table className="min-w-full text-sm">
+          <thead>
+            <tr>
+              {COLUMNS.map((col) => (
+                <th key={col.key} className="px-2 py-1 text-left font-semibold">
+                  {col.label}
+                </th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            {filteredPlayers.map((player) => (
+              <tr key={player.playerId}>
+                {COLUMNS.map((col) => (
+                  <td key={col.key} className="px-2 py-1">
+                    {player[col.key]}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  );
 }

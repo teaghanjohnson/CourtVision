@@ -21,35 +21,35 @@ public class PlayerService {
         return playerRepository.findAll();
     }
 
-    public List<Player> getPlayersFromTeam(String teamName) {
-        return playerRepository.findAll().stream()
-                .filter(player->teamName.equals(player.getTeam())).collect(Collectors.toList());
-    }
-
-    public List<Player> getPlayersByName(String searchText) {
-        return playerRepository.findAll().stream()
-                .filter(player -> player.getPlayer().toLowerCase().contains(searchText.toLowerCase()))
+    public List<Player> getPlayersByYear(String year) {
+        return playerRepository.findAll().stream().filter(player -> year.equals(player.getYear()))
                 .collect(Collectors.toList());
     }
 
-    public List<Player> getPlayerByPos(String searchText) {
+    public List<Player> getPlayersFromTeamAndYear(String teamName, String year) {
+        return playerRepository.findAll().stream()
+                .filter(player -> teamName.equals(player.getTeam()) && (year == null || year.equals(player.getYear())))
+                .collect(Collectors.toList());
+
+    }
+    public List<Player> getPlayersByNameAndYear(String searchText, String year) {
+        return playerRepository.findAll().stream()
+                .filter(player -> player.getPlayer().toLowerCase().contains(searchText.toLowerCase()) && year.equals(player.getYear()))
+                .collect(Collectors.toList());
+    }
+
+    public List<Player> getPlayerByPosAndYear(String searchText, String year) {
         return playerRepository.findAll().stream()
                 .filter(player ->
-                        player.getPosition().toLowerCase().contains(searchText.toLowerCase()))
+                        player.getPosition().toLowerCase().contains(searchText.toLowerCase()) && year.equals(player.getYear()))
                 .collect(Collectors.toList());
     }
 
-    public List<Player> getPlayersByTeamAndPosition(String team, String position) {
+    public List<Player> getPlayersByTeamAndPositionAndYear(String team, String position, String year) {
         return playerRepository.findAll().stream()
-                .filter(player -> team.equals(player.getTeam()) && position.equals(player.getPlayer()))
+                .filter(player -> team.equals(player.getTeam()) && position.equals(player.getPosition()) && year.equals(player.getYear()))
                 .collect(Collectors.toList());
     }
-
-    public List<Player> getPlayersByYear(String year) {}
-
-    public List<Player> getPlayersByTeamAndYear(String year, String team){}
-
-    public List<Player> getPlayersBy
 
     public Player addPlayer(Player player) {
         playerRepository.save(player);

@@ -22,15 +22,16 @@ public class PlayerController {
     public List<Player> getPlayers(
             @RequestParam(required = false) String team,
             @RequestParam(required = false) String name,
-            @RequestParam(required = false) String position) {
+            @RequestParam(required = false) String position,
+            @RequestParam(required = false) String year) {
         if (team != null && position != null) {
-            return playerService.getPlayersByTeamAndPosition(team, position);
+            return playerService.getPlayersByTeamAndPositionAndYear(team, position, year);
         } else if (team != null) {
-            return playerService.getPlayersFromTeam(team);
+            return playerService.getPlayersFromTeamAndYear(team, year);
         } else if (name != null) {
-            return playerService.getPlayersByName(name);
+            return playerService.getPlayersByNameAndYear(name, year);
         } else if (position != null) {
-            return playerService.getPlayerByPos(position);
+            return playerService.getPlayerByPosAndYear(position, year);
         } else {
             return playerService.getPlayers();
             }
