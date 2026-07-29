@@ -1,0 +1,88 @@
+.nav-bar {
+  background: #ec9c67;
+  height: 80px;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  z-index: 3;
+  min-width: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.6);
+
+  .nav-links {
+    font-size: 22px;
+    color: #4d4d4e;
+    display: flex;
+    line-height: 51px;
+    height: 51px;
+    flex: 1;
+    flex-direction: row;
+    position: relative;
+    text-align: center;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 6rem;
+
+    a {
+      font-size: 22px;
+      color: #4d4d4e;
+      display: block;
+      line-height: 51px;
+      height: 51px;
+      position: relative;
+      text-decoration: none;
+
+      &:hover {
+        color: white;
+
+        svg {
+          opacity: 0;
+        }
+        &:after {
+          opacity: 1;
+        }
+      }
+
+      &:after {
+        content: "";
+        font-size: 15px;
+        letter-spacing: 2px;
+        position: absolute;
+        bottom: 0;
+        display: block;
+        width: 100%;
+        text-align: center;
+        opacity: 0;
+        transition: all 0.3s ease-out;
+      }
+      &:first-child {
+        &::after {
+          content: "HOME";
+        }
+      }
+    }
+
+    a.teams-link {
+      &:after {
+        content: "TEAMS";
+      }
+    }
+    a.country-link {
+      &:after {
+        content: "NATIONS";
+      }
+    }
+    a.positions-link {
+      &:after {
+        content: "POSITIONS";
+      }
+    }
+    a.search-link {
+      &:after {
+        content: "SEARCH";
+      }
+    }
+  }
+}
