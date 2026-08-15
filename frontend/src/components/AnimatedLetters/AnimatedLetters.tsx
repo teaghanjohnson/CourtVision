@@ -1,5 +1,5 @@
 import "animate.css";
-import "./AnimatedLetters.css";
+import "./AnimatedLetters.scss";
 
 interface AnimatedLettersProps {
   letterClass: string;
@@ -7,7 +7,11 @@ interface AnimatedLettersProps {
   idx: number;
 }
 
-const AnimatedLetters = ({ letterClass, strArray, idx }: AnimatedLettersProps) => {
+const AnimatedLetters = ({
+  letterClass,
+  strArray,
+  idx,
+}: AnimatedLettersProps) => {
   return (
     <span>
       {strArray.map((char, i) => (

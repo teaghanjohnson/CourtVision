@@ -2,8 +2,8 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import AnimatedLetters from "@/components/AnimatedLetters";
-import InertiaLogo from "@/components/InertiaLogo";
+import AnimatedLetters from "@/components/AnimatedLetters/AnimatedLetters";
+import InertiaLogo from "@/components/InertiaLogo/InertiaLogo";
 import Image from "next/image";
 
 export default function Page() {

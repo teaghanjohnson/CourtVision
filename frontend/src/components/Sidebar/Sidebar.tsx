@@ -1,7 +1,16 @@
 "use client";
 import Link from "next/link";
-import "./Sidebar.css";
+import "./Sidebar.scss";
 import Image from "next/image";
+import {
+  faMagnifyingGlass,
+  faFlag,
+  faHome,
+  faUsers,
+  faUser,
+  faFile,
+} from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 export default function Sidebar() {
   return (
     <>
@@ -14,15 +23,26 @@ export default function Sidebar() {
             height={40}
           />
         </Link>
-        ;
-        <Link href="/teams" className="nav-link">
-          Teams
-        </Link>
-        ;
-        <Link href="/players" className="nav-link">
-          Players
-        </Link>
-        ;
+
+        <div className="nav-links">
+          <Link href="/" className="home-link">
+            <FontAwesomeIcon icon={faHome} />
+          </Link>
+
+          <Link href="/teams" className="teams-link">
+            <FontAwesomeIcon icon={faUsers} />
+          </Link>
+
+          <Link href="/nations" className="country-link">
+            <FontAwesomeIcon icon={faFlag} />
+          </Link>
+          <Link href="/players" className="positions-link">
+            <FontAwesomeIcon icon={faUser} />
+          </Link>
+          <Link href="/search" className="search-link">
+            <FontAwesomeIcon icon={faMagnifyingGlass} />
+          </Link>
+        </div>
       </div>
     </>
   );
