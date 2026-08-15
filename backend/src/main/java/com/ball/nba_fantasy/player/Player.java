@@ -3,15 +3,18 @@ package com.ball.nba_fantasy.player;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.IdClass;
 import jakarta.persistence.Table;
 
 @Entity
 @Table(name="player_season_stats")
+@IdClass(PlayerId.class)
 public class Player {
     @Id
     @Column
     private String playerId;
     private String player;
+    @Id
     private String year;
     private String team;
     private String position;

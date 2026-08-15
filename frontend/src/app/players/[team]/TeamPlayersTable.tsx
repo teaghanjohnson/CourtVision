@@ -1,6 +1,5 @@
 "use client";
 
-import { div } from "framer-motion/client";
 import { useState } from "react";
 
 export type Player = {
@@ -45,9 +44,12 @@ export type Column = {
   label: string;
 };
 
+const POSITION_ORDER = ["PG", "SG", "SF", "PF", "C"];
+
 export const COLUMNS: Column[] = [
   { key: "player", label: "Player" },
   { key: "position", label: "Pos" },
+  { key: "team", label: "Team" },
   { key: "g", label: "G" },
   { key: "gs", label: "GS" },
   { key: "mpg", label: "MPG" },
@@ -87,8 +89,40 @@ export default function TeamPlayersTable({
   defaultYear: string;
 }) {
   const [selectedYear, setSelectedYear] = useState(defaultYear);
+  const [sortColumn, setSortColumn] = useState<keyof Player>("ppg");
+  const [sortDirection, setSortDirection] = useState<"asc" | "desc">("desc");
   const yearsDescending = [...years].reverse();
   const filteredPlayers = players.filter((p) => p.year === selectedYear);
+
+  const handleSort = (key: keyof Player) => {
+    if (key === sortColumn) {
+      setSortDirection(sortDirection === "desc" ? "asc" : "desc");
+    } else {
+      setSortColumn(key);
+      setSortDirection("desc");
+    }
+  };
+
+  const sortedPlayers = [...filteredPlayers].sort((a, b) => {
+    const aVal = a[sortColumn];
+    const bVal = b[sortColumn];
+
+    if (aVal == null) return 1;
+    if (bVal == null) return -1;
+
+    if (sortColumn === "position") {
+      const aIndex = POSITION_ORDER.indexOf(String(aVal));
+      const bIndex = POSITION_ORDER.indexOf(String(bVal));
+      return sortDirection === "desc" ? aIndex - bIndex : bIndex - aIndex;
+    }
+
+    if (typeof aVal === "number" && typeof bVal === "number") {
+      return sortDirection === "desc" ? bVal - aVal : aVal - bVal;
+    }
+
+    const cmp = String(aVal).localeCompare(String(bVal));
+    return sortDirection === "desc" ? -cmp : cmp;
+  });
 
   return (
     <div>
@@ -108,14 +142,23 @@ export default function TeamPlayersTable({
           <thead>
             <tr>
               {COLUMNS.map((col) => (
-                <th key={col.key} className="px-2 py-1 text-left font-semibold">
+                <th
+                  key={col.key}
+                  onClick={() => handleSort(col.key)}
+                  className="px-2 py-1 text-left font-semibold cursor-pointer"
+                >
                   {col.label}
+                  {col.key === sortColumn && (
+                    <span className="ml-1">
+                      {sortDirection === "desc" ? "▼" : "▲"}
+                    </span>
+                  )}
                 </th>
               ))}
             </tr>
           </thead>
           <tbody>
-            {filteredPlayers.map((player) => (
+            {sortedPlayers.map((player) => (
               <tr key={player.playerId}>
                 {COLUMNS.map((col) => (
                   <td key={col.key} className="px-2 py-1">
