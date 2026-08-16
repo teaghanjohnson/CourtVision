@@ -2,6 +2,7 @@ import { getTeamLogo, TEAM_MAP } from "@/constants/teamColors";
 import Image from "next/image";
 import TeamPlayersTable, { Player } from "./TeamPlayersTable";
 import Sidebar from "@/components/Sidebar/Sidebar";
+
 export default async function TeamPlayersPage({
   params,
 }: {

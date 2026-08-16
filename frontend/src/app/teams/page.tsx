@@ -8,12 +8,12 @@ import { useState } from "react";
 export default function teamGrid() {
   const [search, setSearch] = useState("");
   const teamEntries = Object.entries(TEAM_MAP);
-  const suggestions = search
+  const visibleTeamEntries = search
     ? teamEntries.filter(([teamName]) =>
         teamName.toLowerCase().includes(search.toLowerCase()),
       )
-    : [];
-  const teamCells = teamEntries.map(([teamName, team_abbrev]) => (
+    : teamEntries;
+  const teamCells = visibleTeamEntries.map(([teamName, team_abbrev]) => (
     <Link
       key={team_abbrev}
       href={`players/${team_abbrev}`}
@@ -33,10 +33,22 @@ export default function teamGrid() {
 translate-y-full group-hover:translate-y-0
 transition-transform duration-300 ease-[cubic-bezier(0.645,0.045,0.355,1)]"
       >
-        <span className="text-white text-lg font-normal opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+        <span
+          className="text-white text-lg font-normal opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+          style={{
+            fontFamily:
+              'var(--font-dm-sans), "DM Sans Placeholder", sans-serif',
+          }}
+        >
           {teamName}
         </span>
-        <button className="text-center text-white text-[11px] font-bold tracking-[4px] font-sans no-underline py-[6px] px-[14px] rounded-[7px] bg-[#5faceb] whitespace-nowrap transition-all duration-300 ease-in-out hover:bg-white hover:text-[#5faceb]">
+        <button
+          className="text-center text-white text-[11px] font-bold tracking-[4px] no-underline py-[6px] px-[14px] rounded-[7px] bg-[#5faceb] whitespace-nowrap transition-all duration-300 ease-in-out hover:bg-white hover:text-[#5faceb]"
+          style={{
+            fontFamily:
+              'var(--font-dm-sans), "DM Sans Placeholder", sans-serif',
+          }}
+        >
           Enter
         </button>
       </div>
@@ -46,27 +58,27 @@ transition-transform duration-300 ease-[cubic-bezier(0.645,0.045,0.355,1)]"
   return (
     <>
       <div className="pl-10 pr-10 w-full h-full">
-        <div className="text-white text-4xl mt-35">TEAMS</div>
-        <div className="flex-col items-center">
+        <div className="flex items-center justify-between mt-[120px]">
+          <div
+            style={{
+              fontFamily: "var(--font-libre-baskerville), serif",
+              color: "white",
+              fontStyle: "italic",
+              fontSize: "50px",
+              fontFeatureSettings:
+                '"dlig" on, "frac" on, "sups" on, "sinf" on',
+            }}
+          >
+            TEAMS
+          </div>
           <input
             type="text"
             name="searchBar"
-            className="p-10 w-[300px] text-[16px]"
+            className="w-[300px] px-6 py-3 text-[16px] text-black bg-white rounded-full shadow-md border border-gray-200 outline-none focus:ring-2 focus:ring-[#5faceb]"
             placeholder="Search"
             value={search}
             onChange={(e) => setSearch(e.target.value)}
           />
-
-          <ul className="w-[300px] max-h-[150px] overflow-y-auto mt-[4px] p-0 bg-white">
-            {suggestions.map(([teamName, team_abbrev]) => (
-              <li
-                key={team_abbrev}
-                className="flex justify-between items-center p-[14px 20px]"
-              >
-                <Link href={`players/${team_abbrev}`}>{teamName}</Link>
-              </li>
-            ))}
-          </ul>
         </div>
         <div className="mt-30 mb-30 grid grid-cols-3 gap-25 pb-100">
           {teamCells}
