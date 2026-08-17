@@ -120,9 +120,9 @@ export const TEAM_MAP: Record<string, TeamAbbrev> = {
   "Washington Wizards": "WAS",
 };
 
-// Path to a team's logo in /public/images (e.g. getTeamLogo('LAL') -> "/images/LAL.png")
+// Path to a team's logo in /public/images/NBA (e.g. getTeamLogo('LAL') -> "/images/NBA/LAL.png")
 export function getTeamLogo(abbrev: string): string {
-  return `/images/${abbrev}.png`;
+  return `/images/NBA/${abbrev}.png`;
 }
 
 // [primary, secondary, tertiary] hex colors for a team abbreviation

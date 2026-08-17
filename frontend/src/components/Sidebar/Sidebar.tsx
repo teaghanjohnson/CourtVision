@@ -36,7 +36,7 @@ export default function Sidebar() {
           <Link href="/nations" className="country-link">
             <FontAwesomeIcon icon={faFlag} />
           </Link>
-          <Link href="/players" className="positions-link">
+          <Link href="/positions" className="positions-link">
             <FontAwesomeIcon icon={faUser} />
           </Link>
           <Link href="/search" className="search-link">

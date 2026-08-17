@@ -86,5 +86,5 @@ export const COUNTRY_MAP: Record<string, CountryAbbrev> = {
 };
 
 export function getCountryLogo(abbrev: string): string {
-  return `/images/${abbrev}.png`;
+  return `/images/NATIONS/${abbrev}.png`;
 }

@@ -138,6 +138,11 @@ export default function TeamPlayersTable({
         ))}
       </select>
       <div className="overflow-x-auto">
+        <div className="button-container">
+          <button className="team-btns">Roster</button>
+          <button className="team-btns">Player Stats</button>
+          <button className="team-btns">Team Stats</button>
+        </div>
         <table className="min-w-full text-sm">
           <thead>
             <tr>
