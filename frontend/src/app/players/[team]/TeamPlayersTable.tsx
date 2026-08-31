@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { displayAbbrev } from "@/constants/teamColors";
 
 export type Player = {
   playerId: string;
@@ -145,7 +146,9 @@ export default function TeamPlayersTable({
           <tr key={player.playerId}>
             {COLUMNS.map((col) => (
               <td key={col.key} className="px-2 py-1">
-                {player[col.key]}
+                {col.key === "team"
+                  ? displayAbbrev(String(player[col.key]))
+                  : player[col.key]}
               </td>
             ))}
           </tr>

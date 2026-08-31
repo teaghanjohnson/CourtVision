@@ -32,7 +32,11 @@ export type TeamAbbrev =
   | "UTA"
   | "WAS";
 
-export type TeamColorTriple = [primary: string, secondary: string, tertiary: string];
+export type TeamColorTriple = [
+  primary: string,
+  secondary: string,
+  tertiary: string,
+];
 
 // Ported from nba-match-predictor/utils/constants/constants.py
 export const TEAM_COLORS: Record<TeamAbbrev, TeamColorTriple> = {
@@ -128,4 +132,21 @@ export function getTeamLogo(abbrev: string): string {
 // [primary, secondary, tertiary] hex colors for a team abbreviation
 export function getTeamColors(abbrev: TeamAbbrev): TeamColorTriple {
   return TEAM_COLORS[abbrev] ?? TEAM_COLORS.NBA;
+}
+
+// Display-only overrides: changes abbreviations for these teams in the frontend
+// more commonly used abbreviations better for NBA branding synergy
+const DISPLAY_ABBREV_OVERRIDES: Partial<Record<TeamAbbrev, string>> = {
+  BRK: "BKN",
+  CHO: "CHA",
+  PHO: "PHX",
+};
+
+// Team abbreviation as shown to users. Handles a traded player's team field, which can
+// be a hyphenated chain like "LAL-BRK" rather than a single code.
+export function displayAbbrev(abbrev: string): string {
+  return abbrev
+    .split("-")
+    .map((code) => DISPLAY_ABBREV_OVERRIDES[code as TeamAbbrev] ?? code)
+    .join("-");
 }
