@@ -30,40 +30,29 @@ public class RosterEntryService {
                 .collect(Collectors.toList());
     }
 
-    public PlayerDetailResponse getPlayerDetail(String nbaPlayerId, String team, String year) {
+    public PlayerDetailResponse getPlayerDetail(String playerId, String team, String year) {
         RosterEntry bio = rosterEntryRepository.findAll().stream()
-                .filter(entry -> nbaPlayerId.equals(entry.getNbaPlayerId())
+                .filter(entry -> playerId.equals(entry.getPlayerId())
                         && team.equals(entry.getTeam())
                         && year.equals(entry.getYear()))
                 .findFirst()
                 .orElse(null);
 
         if (bio == null) {
-            log.warn("No roster entry found for nbaPlayerId={}, team={}, year={}", nbaPlayerId, team, year);
+            log.warn("No roster entry found for playerId={}, team={}, year={}", playerId, team, year);
             return new PlayerDetailResponse(null, Collections.emptyList());
         }
 
-        String normalizedTarget = normalizeName(bio.getPlayer());
-
+        // roster and player stats now share the same basketball-reference player ID
+        // scheme, so this is an exact match - no more name-based fuzzy matching
         List<Player> stats = playerRepository.findAll().stream()
-                .filter(p -> normalizedTarget.equals(normalizeName(p.getPlayer())) && team.equals(p.getTeam()))
+                .filter(p -> playerId.equals(p.getPlayerId()) && team.equals(p.getTeam()))
                 .collect(Collectors.toList());
 
         if (stats.isEmpty()) {
-            log.warn("No Player stats matched for '{}' ({}) on team {}", bio.getPlayer(), normalizedTarget, team);
+            log.warn("No Player stats matched for playerId={} on team {}", playerId, team);
         }
 
         return new PlayerDetailResponse(bio, stats);
-    }
-
-    private String normalizeName(String name) {
-        if (name == null) {
-            return "";
-        }
-        String normalized = name.toLowerCase()
-                .replace(".", "")
-                .replace("'", "");
-        normalized = normalized.replaceAll("\\b(jr|sr|ii|iii|iv)\\b", "");
-        return normalized.trim().replaceAll("\\s+", " ");
     }
 }

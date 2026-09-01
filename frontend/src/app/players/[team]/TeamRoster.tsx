@@ -3,7 +3,7 @@
 import { useState } from "react";
 
 export type RosterEntry = {
-  nbaPlayerId: string;
+  playerId: string;
   team: string;
   year: string;
 
@@ -96,7 +96,7 @@ export default function TeamRoster({
       </thead>
       <tbody>
         {sortedRoster.map((r) => (
-          <tr key={r.nbaPlayerId}>
+          <tr key={r.playerId}>
             {COLUMNS.map((col) => (
               <td key={col.key} className="px-2 py-1">
                 {r[col.key]}

@@ -26,8 +26,8 @@ public class RosterEntryController {
     @GetMapping("/detail")
     public PlayerDetailResponse getPlayerDetail(
             @RequestParam String team,
-            @RequestParam String nbaPlayerId,
+            @RequestParam String playerId,
             @RequestParam String year) {
-        return rosterEntryService.getPlayerDetail(nbaPlayerId, team, year);
+        return rosterEntryService.getPlayerDetail(playerId, team, year);
     }
 }

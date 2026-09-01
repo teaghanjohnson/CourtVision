@@ -167,7 +167,6 @@ DAL,21-22,omorueu01,Eugene Omoruyi,False,2,SF,6-6,235,"February 14, 1997",R,"Rut
 DAL,21-22,pinsoth01,Theo Pinson,False,1,SF,6-5,212,"November 5, 1995",3,UNC
 DAL,21-22,porzikr01,Kristaps Porziņģis,False,6,PF,7-2,240,"August 2, 1995",5,
 DAL,21-22,poweldw01,Dwight Powell,False,7,C,6-10,240,"July 20, 1991",7,Stanford
-DAL,21-22,thomais02,Isaiah Thomas,False,2,PG,5-9,185,"February 7, 1989",10,Washington
 DAL,21-22,wrighmo01,Moses Wright,False,5,PF,6-8,226,"December 23, 1998",R,Georgia Tech
 DEN,21-22,bartowi01,Will Barton,False,5,SG,6-5,181,"January 6, 1991",9,Memphis
 DEN,21-22,bolbo01,Bol Bol,False,10,PF,7-3,220,"November 16, 1999",2,Oregon
@@ -277,7 +276,6 @@ IND,21-22,smithja04,Jalen Smith,False,25,PF,6-8,215,"March 16, 2000",1,Maryland
 IND,21-22,stephla01,Lance Stephenson,False,6,PG,6-6,230,"September 5, 1990",9,Cincinnati
 IND,21-22,sykeske01,Keifer Sykes,False,28,PG,5-11,167,"December 30, 1993",R,Green Bay
 IND,21-22,taylote01,Terry Taylor,False,32,PF,6-5,230,"September 23, 1999",R,Austin Peay State University
-IND,21-22,thomptr01,Tristan Thompson,False,11,C,6-9,254,"March 13, 1991",10,Texas
 IND,21-22,turnemy01,Myles Turner,False,33,C,6-11,250,"March 24, 1996",6,Texas
 IND,21-22,wanambr01,Brad Wanamaker,False,10,PG,6-3,210,"July 25, 1989",3,Pitt
 IND,21-22,washidu02,Duane Washington Jr.,False,4,PG,6-2,197,"March 24, 2000",R,Ohio State
@@ -287,8 +285,6 @@ LAC,21-22,bledser01,Eric Bledsoe,False,12,PG,6-1,214,"December 9, 1989",11,Kentu
 LAC,21-22,bostobr01,Brandon Boston Jr.,False,4,SG,6-6,188,"November 28, 2001",R,Kentucky
 LAC,21-22,coffeam01,Amir Coffey,False,7,SG,6-7,210,"June 17, 1997",2,Minnesota
 LAC,21-22,covinro01,Robert Covington,False,23,PF,6-7,209,"December 14, 1990",8,Tennessee State
-LAC,21-22,ennisja01,James Ennis III,False,10,SF,6-6,215,"July 1, 1990",7,Cal State Long Beach
-LAC,21-22,gabriwe01,Wenyen Gabriel,False,35,PF,6-9,205,"March 26, 1997",2,Kentucky
 LAC,21-22,georgpa01,Paul George,False,13,PF,6-8,220,"May 2, 1990",11,Fresno State
 LAC,21-22,harteis01,Isaiah Hartenstein,False,55,C,7-0,250,"May 5, 1998",3,
 LAC,21-22,hoodro01,Rodney Hood,False,22,SF,6-8,208,"October 20, 1992",7,"Mississippi State,Duke"
@@ -384,26 +380,22 @@ MIL,21-22,connapa01,Pat Connaughton,False,24,SF,6-5,209,"January 6, 1993",6,Notr
 MIL,21-22,couside01,DeMarcus Cousins,False,15,C,6-10,270,"August 13, 1990",10,Kentucky
 MIL,21-22,delauja01,Javin DeLaurier,False,12,C,6-10,237,"April 7, 1998",R,Duke
 MIL,21-22,divindo01,Donte DiVincenzo,False,0,SG,6-4,203,"January 31, 1997",3,Villanova
-MIL,21-22,dowtije01,Jeff Dowtin Jr.,False,15,PG,6-3,177,"May 10, 1997",R,Rhode Island
 MIL,21-22,gallola01,Langston Galloway,False,12,SG,6-1,200,"December 9, 1991",7,Saint Joseph's
 MIL,21-22,hillge01,George Hill,False,3,PG,6-4,188,"May 4, 1986",13,IUPUI
 MIL,21-22,holidjr01,Jrue Holiday,False,21,PG,6-4,220,"June 12, 1990",12,UCLA
 MIL,21-22,hoodro01,Rodney Hood,False,5,PF,6-8,208,"October 20, 1992",7,"Mississippi State,Duke"
 MIL,21-22,ibakase01,Serge Ibaka,False,25,C,6-11,235,"September 18, 1989",12,
 MIL,21-22,kalaige01,Georgios Kalaitzakis,False,18,SF,6-8,192,"January 2, 1999",R,
-MIL,21-22,kornelu01,Luke Kornet,False,35,C,7-1,250,"July 15, 1995",4,Vanderbilt
 MIL,21-22,lopezbr01,Brook Lopez,False,11,C,7-1,282,"April 1, 1988",13,Stanford
 MIL,21-22,mamuksa01,Sandro Mamukelashvili,False,54,PF,6-9,240,"May 23, 1999",R,Seton Hall
 MIL,21-22,matthwe02,Wesley Matthews,False,23,SG,6-5,220,"October 14, 1986",12,Marquette
 MIL,21-22,middlkh01,Khris Middleton,False,22,SF,6-7,222,"August 12, 1991",9,Texas A&M
-MIL,21-22,monrogr01,Greg Monroe,False,15,C,6-11,265,"June 4, 1990",9,Georgetown
 MIL,21-22,nworajo01,Jordan Nwora,False,13,SF,6-8,225,"September 9, 1998",1,Louisville
 MIL,21-22,ojelese01,Semi Ojeleye,False,37,PF,6-6,240,"December 5, 1994",4,"Duke,SMU"
 MIL,21-22,portibo01,Bobby Portis,False,9,C,6-9,250,"February 10, 1995",6,Arkansas
 MIL,21-22,robinju01,Justin Robinson,False,55,PG,6-1,195,"October 12, 1997",2,Virginia Tech
 MIL,21-22,smartja01,Javonte Smart,False,6,PG,6-4,205,"June 3, 1999",R,LSU
 MIL,21-22,tuckera01,Rayjon Tucker,False,59,SG,6-3,209,"September 24, 1997",2,"Florida Gulf Coast,Little Rock"
-MIL,21-22,vildolu01,Luca Vildoza,False,6,PG,6-3,190,"August 11, 1995",R,
 MIL,21-22,wiggili01,Lindell Wigginton,False,28,PG,6-1,189,"March 28, 1998",R,Iowa State
 MIN,21-22,beaslma01,Malik Beasley,False,5,SG,6-4,187,"November 26, 1996",5,Florida State
 MIN,21-22,beverpa01,Patrick Beverley,False,22,PG,6-2,180,"July 12, 1988",9,Arkansas
@@ -453,7 +445,6 @@ NYK,21-22,fournev01,Evan Fournier,False,13,SG,6-6,205,"October 29, 1992",9,
 NYK,21-22,gibsota01,Taj Gibson,False,67,C,6-9,232,"June 24, 1985",12,USC
 NYK,21-22,grimequ01,Quentin Grimes,False,6,SG,6-4,210,"May 8, 2000",R,"Kansas,Houston"
 NYK,21-22,hallty01,Tyler Hall,False,16,SG,6-5,210,"March 25, 1997",R,Montana State
-NYK,21-22,houseda01,Danuel House Jr.,False,44,SF,6-6,220,"June 7, 1993",5,Texas A&M
 NYK,21-22,huntfe01,Feron Hunt,False,16,SF,6-8,195,"July 5, 1999",R,SMU
 NYK,21-22,knoxke01,Kevin Knox,False,20,SF,6-8,215,"August 11, 1999",3,Kentucky
 NYK,21-22,mcbrimi01,Miles McBride,False,2,PG,6-2,195,"September 8, 2000",R,West Virginia
@@ -611,7 +602,6 @@ SAC,21-22,mudiaem01,Emmanuel Mudiay,False,10,PG,6-3,200,"March 5, 1996",5,
 SAC,21-22,murkead01,Ade Murkey,False,31,SG,6-5,200,"January 29, 1998",R,Denver
 SAC,21-22,quetane01,Neemias Queta,False,88,C,7-0,248,"July 13, 1999",R,Utah State University
 SAC,21-22,ramseja01,Jahmi'us Ramsey,False,20,SG,6-3,190,"June 9, 2001",1,Texas Tech
-SAC,21-22,robinju01,Justin Robinson,False,9,PG,6-1,195,"October 12, 1997",2,Virginia Tech
 SAC,21-22,sabondo01,Domantas Sabonis,False,10,PF,6-10,240,"May 3, 1996",5,Gonzaga
 SAC,21-22,thomptr01,Tristan Thompson,False,13,C,6-9,254,"March 13, 1991",10,Texas
 SAC,21-22,woodaro01,Robert Woodard II,False,17,SF,6-6,235,"September 22, 1999",1,Mississippi State
@@ -620,7 +610,6 @@ SAS,21-22,cacokde01,Devontae Cacok,False,18,PF,6-7,240,"October 8, 1996",2,UNC W
 SAS,21-22,colliza01,Zach Collins,False,23,C,6-9,250,"November 19, 1997",3,Gonzaga
 SAS,21-22,eubandr01,Drew Eubanks,False,14,C,6-10,245,"February 1, 1997",3,Oregon State
 SAS,21-22,forbebr01,Bryn Forbes,False,7,SG,6-2,205,"July 23, 1993",5,Michigan State
-SAS,21-22,hernaju01,Juancho Hernangómez,False,41,PF,6-9,214,"September 28, 1995",5,
 SAS,21-22,johnske04,Keldon Johnson,False,3,SF,6-6,220,"October 11, 1999",2,Kentucky
 SAS,21-22,johnsty01,Tyler Johnson,False,28,PG,6-3,186,"May 7, 1992",7,Fresno State
 SAS,21-22,jonestr01,Tre Jones,False,33,PG,6-1,185,"January 8, 2000",1,Duke
@@ -633,7 +622,6 @@ SAS,21-22,murrade01,Dejounte Murray,False,5,PG,6-4,180,"September 19, 1996",4,Wa
 SAS,21-22,poeltja01,Jakob Poeltl,False,25,C,7-0,253,"October 15, 1995",5,Utah
 SAS,21-22,primojo01,Joshua Primo,False,11,SF,6-4,189,"December 24, 2002",R,Alabama
 SAS,21-22,richajo01,Josh Richardson,False,7,SG,6-5,200,"September 15, 1993",6,Tennessee
-SAS,21-22,satorto01,Tomáš Satoranský,False,45,SF,6-7,210,"October 30, 1991",5,
 SAS,21-22,vassede01,Devin Vassell,False,24,SF,6-5,200,"August 23, 2000",1,Florida State
 SAS,21-22,walkelo01,Lonnie Walker IV,False,1,SG,6-4,204,"December 14, 1998",3,Miami (FL)
 SAS,21-22,whitede01,Derrick White,False,4,SG,6-4,190,"July 2, 1994",4,"Colorado-Colorado Springs,Colorado"
@@ -701,10 +689,8 @@ WAS,21-22,goodwjo01,Jordan Goodwin,False,7,SG,6-3,215,"October 23, 1998",R,Saint
 WAS,21-22,hachiru01,Rui Hachimura,False,8,PF,6-8,230,"February 8, 1998",2,Gonzaga
 WAS,21-22,harremo01,Montrezl Harrell,False,6,C,6-7,240,"January 26, 1994",6,Louisville
 WAS,21-22,holidaa01,Aaron Holiday,False,4,PG,6-0,185,"September 30, 1996",3,UCLA
-WAS,21-22,johnsal02,Alize Johnson,False,27,PF,6-9,212,"April 22, 1996",3,"Frank Phillips College,Missouri State"
 WAS,21-22,kispeco01,Corey Kispert,False,24,SF,6-6,224,"March 3, 1999",R,Gonzaga
 WAS,21-22,kuzmaky01,Kyle Kuzma,False,33,PF,6-8,221,"July 24, 1995",4,Utah
-WAS,21-22,monrogr01,Greg Monroe,False,55,C,6-11,265,"June 4, 1990",9,Georgetown
 WAS,21-22,netora01,Raul Neto,False,19,PG,6-2,180,"May 19, 1992",6,
 WAS,21-22,porzikr01,Kristaps Porziņģis,False,6,PF,7-2,240,"August 2, 1995",5,
 WAS,21-22,satorto01,Tomáš Satoranský,False,31,PG,6-7,210,"October 30, 1991",5,
@@ -983,7 +969,6 @@ LAL,22-23,chrisma02,Max Christie,False,10,SG,6-5,190,"February 10, 2003",R,Michi
 LAL,22-23,davisan02,Anthony Davis,False,3,C,6-10,253,"March 11, 1993",10,Kentucky
 LAL,22-23,gabriwe01,Wenyen Gabriel,False,35,C,6-9,205,"March 26, 1997",3,Kentucky
 LAL,22-23,hachiru01,Rui Hachimura,False,28,PF,6-8,230,"February 8, 1998",3,Gonzaga
-LAL,22-23,harrish01,Shaquille Harrison,False,0,SG,6-4,195,"October 6, 1993",5,Tulsa
 LAL,22-23,jamesle01,LeBron James,False,6,PF,6-9,250,"December 30, 1984",19,
 LAL,22-23,jonesda03,Damian Jones,False,30,C,6-10,245,"June 30, 1995",6,Vanderbilt
 LAL,22-23,nunnke01,Kendrick Nunn,False,12,SG,6-3,190,"August 3, 1995",2,"Illinois,Oakland"
@@ -994,7 +979,6 @@ LAL,22-23,russeda01,D'Angelo Russell,False,1,PG,6-3,193,"February 23, 1996",7,Oh
 LAL,22-23,ryanma01,Matt Ryan,False,37,SF,6-6,215,"April 17, 1997",1,"Notre Dame,Vanderbilt,Chattanooga"
 LAL,22-23,schrode01,Dennis Schröder,False,17,PG,6-1,175,"September 15, 1993",9,
 LAL,22-23,swideco01,Cole Swider,False,20,SF,6-10,220,"May 8, 1999",R,"Villanova,Syracuse"
-LAL,22-23,thomptr01,Tristan Thompson,False,9,C,6-9,254,"March 13, 1991",11,Texas
 LAL,22-23,toscaju01,Juan Toscano-Anderson,False,95,SF,6-6,209,"April 10, 1993",3,Marquette
 LAL,22-23,vandeja01,Jarred Vanderbilt,False,2,PF,6-8,214,"April 3, 1999",4,Kentucky
 LAL,22-23,walkelo01,Lonnie Walker IV,False,4,SG,6-4,204,"December 14, 1998",4,Miami (FL)
@@ -1103,7 +1087,6 @@ NYK,22-23,fournev01,Evan Fournier,False,13,SG,6-6,205,"October 29, 1992",10,
 NYK,22-23,grimequ01,Quentin Grimes,False,6,SG,6-4,210,"May 8, 2000",1,"Kansas,Houston"
 NYK,22-23,hartjo01,Josh Hart,False,3,SF,6-5,215,"March 6, 1995",5,Villanova
 NYK,22-23,harteis01,Isaiah Hartenstein,False,55,C,7-0,250,"May 5, 1998",4,
-NYK,22-23,jeffrda01,DaQuan Jeffries,False,8,SG,6-5,222,"August 30, 1997",3,"Oral Roberts,Tulsa"
 NYK,22-23,keelstr01,Trevor Keels,False,"0, 3",SG,6-3,215,"August 26, 2003",R,Duke
 NYK,22-23,mcbrimi01,Miles McBride,False,2,PG,6-2,195,"September 8, 2000",1,West Virginia
 NYK,22-23,mykhasv01,Svi Mykhailiuk,False,17,SF,6-7,205,"June 10, 1997",4,Kansas
@@ -1499,7 +1482,6 @@ DET,23-24,evbuoto01,Tosan Evbuomwan,False,18,SF,6-8,217,"February 16, 2001",R,Pr
 DET,23-24,flynnma01,Malachi Flynn,False,14,PG,6-1,185,"May 10, 1998",3,"Washington State,San Diego State"
 DET,23-24,fontesi01,Simone Fontecchio,False,19,SF,6-7,209,"December 9, 1995",1,
 DET,23-24,fournev01,Evan Fournier,False,31,SG,6-6,205,"October 29, 1992",11,
-DET,23-24,gallida01,Danilo Gallinari,False,12,SF,6-10,236,"August 8, 1988",13,
 DET,23-24,gibsota01,Taj Gibson,False,67,PF,6-9,232,"June 24, 1985",14,USC
 DET,23-24,grimequ01,Quentin Grimes,False,24,SG,6-4,210,"May 8, 2000",2,"Kansas,Houston"
 DET,23-24,harrijo01,Joe Harris,False,31,SG,6-6,220,"September 6, 1991",9,Virginia
@@ -1508,9 +1490,7 @@ DET,23-24,iveyja01,Jaden Ivey,False,23,SG,6-3,195,"February 13, 2002",1,Purdue
 DET,23-24,knoxke01,Kevin Knox,False,24,SF,6-8,215,"August 11, 1999",5,Kentucky
 DET,23-24,liveris01,Isaiah Livers,False,12,PF,6-6,232,"July 28, 1998",2,Michigan
 DET,23-24,metuch01,Chimezie Metu,False,5,C,6-10,225,"March 22, 1997",5,USC
-DET,23-24,miltosh01,Shake Milton,False,5,SG,6-5,205,"September 26, 1996",5,SMU
 DET,23-24,morrimo01,Monte Morris,False,5,PG,6-2,183,"June 27, 1995",6,Iowa State
-DET,23-24,muscami01,Mike Muscala,False,41,C,6-10,240,"July 1, 1991",10,Bucknell
 DET,23-24,nowelja01,Jaylen Nowell,False,20,SG,6-4,201,"July 9, 1999",4,Washington
 DET,23-24,rhodeja01,Jared Rhoden,False,8,SG,6-5,210,"August 27, 1999",1,Seton Hall
 DET,23-24,sassema01,Marcus Sasser,False,25,PG,6-1,195,"September 21, 2000",R,Houston
@@ -1615,7 +1595,6 @@ LAL,23-24,reddica01,Cam Reddish,False,5,SF,6-7,230,"September 1, 1999",4,Duke
 LAL,23-24,russeda01,D'Angelo Russell,False,1,PG,6-3,193,"February 23, 1996",8,Ohio State
 LAL,23-24,vandeja01,Jarred Vanderbilt,False,2,PF,6-8,214,"April 3, 1999",5,Kentucky
 LAL,23-24,vincega01,Gabe Vincent,False,7,PG,6-2,200,"June 14, 1996",4,UC Santa Barbara
-LAL,23-24,windldy01,Dylan Windler,False,20,SF,6-7,196,"September 22, 1996",3,Belmont
 LAL,23-24,woodch01,Christian Wood,False,35,PF,6-8,214,"September 27, 1995",7,UNLV
 MEM,23-24,aldamsa01,Santi Aldama,False,7,PF,7-0,215,"January 10, 2001",2,Loyola (MD)
 MEM,23-24,allenti01,Timmy Allen,False,0,SF,6-6,210,"January 9, 2000",R,"Utah,Texas"
@@ -1741,7 +1720,6 @@ NYK,23-24,brunsja01,Jalen Brunson,False,11,PG,6-2,190,"August 31, 1996",5,Villan
 NYK,23-24,burksal01,Alec Burks,False,18,SG,6-5,214,"July 20, 1991",12,Colorado
 NYK,23-24,diakima01,Mamadi Diakite,False,25,PF,6-9,228,"January 21, 1997",3,Virginia
 NYK,23-24,divindo01,Donte DiVincenzo,False,0,SG,6-4,203,"January 31, 1997",5,Villanova
-NYK,23-24,flynnma01,Malachi Flynn,False,4,PG,6-1,185,"May 10, 1998",3,"Washington State,San Diego State"
 NYK,23-24,fournev01,Evan Fournier,False,13,SG,6-6,205,"October 29, 1992",11,
 NYK,23-24,gibsota01,Taj Gibson,False,67,PF,6-9,232,"June 24, 1985",14,USC
 NYK,23-24,grimequ01,Quentin Grimes,False,6,SG,6-4,210,"May 8, 2000",2,"Kansas,Houston"
@@ -1810,7 +1788,6 @@ PHI,23-24,harrito02,Tobias Harris,False,12,PF,6-8,226,"July 15, 1992",12,Tenness
 PHI,23-24,hieldbu01,Buddy Hield,False,17,SG,6-4,220,"December 17, 1992",7,Oklahoma
 PHI,23-24,houseda01,Danuel House Jr.,False,25,SF,6-6,220,"June 7, 1993",7,Texas A&M
 PHI,23-24,korkmfu01,Furkan Korkmaz,False,30,SG,6-7,202,"July 24, 1997",6,
-PHI,23-24,loftoke01,Kenneth Lofton Jr.,False,35,PF,6-6,275,"August 14, 2002",1,Louisiana Tech
 PHI,23-24,lowryky01,Kyle Lowry,False,7,PG,6-0,196,"March 25, 1986",17,Villanova
 PHI,23-24,martike04,KJ Martin,False,1,SF,6-6,215,"January 6, 2001",3,
 PHI,23-24,maxeyty01,Tyrese Maxey,False,0,PG,6-2,200,"November 4, 2000",3,Kentucky
@@ -1922,7 +1899,6 @@ TOR,23-24,flynnma01,Malachi Flynn,False,22,PG,6-1,185,"May 10, 1998",3,"Washingt
 TOR,23-24,freemja01,Javon Freeman-Liberty,False,0,PG,6-3,190,"October 20, 1999",R,"Valparaiso,DePaul"
 TOR,23-24,gueyemo01,Mouhamadou Gueye,False,16,PF,6-9,210,"July 6, 1998",R,"Monroe Community College,Stony Brook University,Pitt"
 TOR,23-24,harpero02,Ron Harper Jr.,False,8,PF,6-5,233,"April 12, 2000",1,Rutgers University
-TOR,23-24,lewiski01,Kira Lewis Jr.,False,3,PG,6-1,170,"April 6, 2001",3,Alabama
 TOR,23-24,mcdanja01,Jalen McDaniels,False,2,SF,6-9,205,"January 31, 1998",4,San Diego State
 TOR,23-24,nowelma01,Markquis Nowell,False,24,SG,5-7,160,"December 25, 1999",R,"Little Rock,Kansas State"
 TOR,23-24,nworajo01,Jordan Nwora,False,13,SF,6-8,225,"September 9, 1998",3,Louisville
@@ -2198,7 +2174,6 @@ GSW,24-25,podzibr01,Brandin Podziemski,False,2,SG,6-4,205,"February 25, 2003",1,
 GSW,24-25,postqu01,Quinten Post,False,21,PF,7-0,238,"March 21, 2000",R,"Mississippi State,Boston College"
 GSW,24-25,roweja01,Jackson Rowe,False,44,PF,6-6,210,"January 4, 1997",R,Cal State Fullerton
 GSW,24-25,santogu01,Gui Santos,False,15,PF,6-7,185,"June 22, 2002",1,
-GSW,24-25,schrode01,Dennis Schröder,False,71,SG,6-1,175,"September 15, 1993",11,
 GSW,24-25,spencpa01,Pat Spencer,False,61,PG,6-2,205,"July 4, 1996",1,"Loyola (MD),Northwestern"
 GSW,24-25,waterli01,Lindy Waters III,False,43,SG,6-5,210,"July 28, 1997",3,Oklahoma State
 GSW,24-25,wiggian01,Andrew Wiggins,False,22,SF,6-6,197,"February 23, 1995",10,Kansas
@@ -2245,7 +2220,6 @@ IND,24-25,wisemja01,James Wiseman,False,13,C,6-11,240,"March 31, 2001",3,Memphis
 LAC,24-25,baldwpa01,Patrick Baldwin Jr.,False,23,SF,7-0,220,"November 18, 2002",2,UW-Milwaukee
 LAC,24-25,bambamo01,Mo Bamba,False,4,C,7-0,231,"May 12, 1998",6,Texas
 LAC,24-25,batumni01,Nicolas Batum,False,33,PF,6-7,230,"December 14, 1988",16,
-LAC,24-25,beaucma01,MarJon Beauchamp,False,0,SF,6-7,199,"October 12, 2000",2,Yakima Valley Community College
 LAC,24-25,bogdabo01,Bogdan Bogdanović,False,10,SG,6-5,225,"August 18, 1992",7,
 LAC,24-25,brownko01,Kobe Brown,False,21,PF,6-7,250,"January 1, 2000",1,Missouri
 LAC,24-25,chrisca02,Cam Christie,False,12,SG,6-5,190,"July 24, 2005",R,Minnesota
@@ -2276,7 +2250,6 @@ LAL,24-25,hoodsja01,Jalen Hood-Schifino,False,0,SG,6-5,210,"June 19, 2003",1,Ind
 LAL,24-25,jamesbr02,Bronny James,False,9,SG,6-2,210,"October 6, 2004",R,USC
 LAL,24-25,jamesle01,LeBron James,False,23,SF,6-9,250,"December 30, 1984",21,
 LAL,24-25,jemistr01,Trey Jemison,False,55,C,6-10,270,"November 28, 1999",1,"Clemson,UAB"
-LAL,24-25,klebima01,Maxi Kleber,False,14,PF,6-10,240,"January 29, 1992",7,
 LAL,24-25,knechda01,Dalton Knecht,False,4,SF,6-6,215,"April 19, 2001",R,"Northeastern Junior College,University of Northern Colorado,Tennessee"
 LAL,24-25,kolokch01,Christian Koloko,False,10,C,6-11,225,"June 20, 2000",1,Arizona
 LAL,24-25,lenal01,Alex Len,False,27,C,7-0,250,"June 16, 1993",11,Maryland
@@ -2483,7 +2456,6 @@ PHI,24-25,okekech01,Chuma Okeke,False,18,PF,6-7,229,"August 18, 1998",4,Auburn
 PHI,24-25,oubreke01,Kelly Oubre Jr.,False,9,SF,6-8,203,"December 9, 1995",9,Kansas
 PHI,24-25,quinole01,Lester Quiñones,False,25,SG,6-5,208,"November 16, 2000",2,Memphis
 PHI,24-25,reeseal01,Alex Reese,False,65,PF,6-9,245,"May 21, 1999",R,Alabama
-PHI,24-25,roddyda01,David Roddy,False,45,PF,6-5,255,"March 27, 2001",2,Colorado State
 PHI,24-25,walkelo01,Lonnie Walker IV,False,16,SG,6-4,204,"December 14, 1998",6,Miami (FL)
 PHI,24-25,wheelph02,Phillip Wheeler,False,36,PF,6-8,185,"April 23, 2002",R,
 PHI,24-25,yabusgu01,Guerschon Yabusele,False,28,C,6-7,265,"December 17, 1995",2,
@@ -2579,7 +2551,6 @@ TOR,24-25,battlja01,Jamison Battle,False,77,SF,6-7,220,"May 10, 2001",R,"George 
 TOR,24-25,bouchch01,Chris Boucher,False,25,PF,6-8,200,"January 11, 1993",7,"New Mexico Junior College,Northwest College,Oregon"
 TOR,24-25,brownbr01,Bruce Brown,False,11,PG,6-4,202,"August 15, 1996",6,Miami (FL)
 TOR,24-25,cartodj01,D.J. Carton,False,3,SG,6-2,200,"August 5, 2000",1,"Ohio State,Marquette"
-TOR,24-25,castlco01,Colin Castleton,False,11,C,6-10,250,"May 25, 2000",1,"Michigan,Florida"
 TOR,24-25,chomcul01,Ulrich Chomche,False,22,PF,6-11,235,"December 30, 2005",R,
 TOR,24-25,dickgr01,Gradey Dick,False,1,SG,6-7,200,"November 20, 2003",1,Kansas
 TOR,24-25,fernabr01,Bruno Fernando,False,24,C,6-9,240,"August 15, 1998",5,Maryland
@@ -2665,7 +2636,6 @@ ATL,25-26,vincega01,Gabe Vincent,False,4,PG,6-2,200,"June 14, 1996",6,UC Santa B
 ATL,25-26,wallake01,Keaton Wallace,False,2,PG,6-3,185,"February 26, 1999",1,Texas-San Antonio
 ATL,25-26,youngtr01,Trae Young,False,11,PG,6-2,164,"September 19, 1998",7,Oklahoma
 BOS,25-26,bantoda01,Dalano Banton,False,45,PG,6-8,203,"November 7, 1999",4,Nebraska
-BOS,25-26,bassech01,Charles Bassey,False,99,C,6-10,230,"October 28, 2000",4,Western Kentucky
 BOS,25-26,bouchch01,Chris Boucher,False,99,PF,6-8,200,"January 11, 1993",8,"New Mexico Junior College,Northwest College,Oregon"
 BOS,25-26,brownja02,Jaylen Brown,False,7,SF,6-6,223,"October 24, 1996",9,California
 BOS,25-26,garzalu01,Luka Garza,False,52,C,6-10,243,"December 27, 1998",4,Iowa
@@ -2788,7 +2758,6 @@ DAL,25-26,flaggco01,Cooper Flagg,False,32,SF,6-9,205,"December 21, 2006",R,Duke
 DAL,25-26,gaffoda01,Daniel Gafford,False,21,C,6-10,265,"October 1, 1998",6,Arkansas
 DAL,25-26,hardyja02,Jaden Hardy,False,1,SG,6-3,198,"July 5, 2002",3,
 DAL,25-26,johnsaj01,AJ Johnson,False,8,SG,6-5,160,"December 1, 2004",1,
-DAL,25-26,jonesty01,Tyus Jones,False,1,PG,6-0,196,"May 10, 1996",10,Duke
 DAL,25-26,kellymi02,Miles Kelly,False,14,PG,6-4,190,"January 26, 2003",R,"Georgia Tech,Auburn"
 DAL,25-26,livelde01,Dereck Lively II,False,2,C,7-1,230,"February 12, 2004",2,Duke
 DAL,25-26,marshna01,Naji Marshall,False,13,SF,6-6,220,"January 24, 1998",5,Xavier
@@ -2915,7 +2884,6 @@ LAC,25-26,bogdabo01,Bogdan Bogdanović,False,"7, 10",SG,6-5,225,"August 18, 1992
 LAC,25-26,brownko01,Kobe Brown,False,24,PF,6-7,250,"January 1, 2000",2,Missouri
 LAC,25-26,chrisca02,Cam Christie,False,12,SG,6-5,190,"July 24, 2005",1,Minnesota
 LAC,25-26,collijo01,John Collins,False,20,PF,6-9,226,"September 23, 1997",8,Wake Forest
-LAC,25-26,dennira01,RayJ Dennis,False,7,PG,6-1,180,"March 30, 2001",1,"Boise State,Toledo,Baylor"
 LAC,25-26,dunnkr01,Kris Dunn,False,8,PG,6-3,205,"March 18, 1994",9,Providence
 LAC,25-26,garlada01,Darius Garland,False,10,PG,6-1,192,"January 26, 2000",6,Vanderbilt
 LAC,25-26,hardeja01,James Harden,False,1,PG,6-5,220,"August 26, 1989",16,Arizona State
@@ -2954,7 +2922,6 @@ LAL,25-26,timmedr01,Drew Timme,False,17,PF,6-9,235,"September 9, 2000",1,Gonzaga
 LAL,25-26,vandeja01,Jarred Vanderbilt,False,2,PF,6-8,214,"April 3, 1999",7,Kentucky
 LAL,25-26,vincega01,Gabe Vincent,False,7,PG,6-2,200,"June 14, 1996",6,UC Santa Barbara
 MEM,25-26,aldamsa01,Santi Aldama,False,7,PF,7-0,215,"January 10, 2001",4,Loyola (MD)
-MEM,25-26,anderky01,Kyle Anderson,False,5,SF,6-8,230,"September 20, 1993",11,UCLA
 MEM,25-26,balad01,Adama-Alpha Bal,False,72,SG,6-7,190,"December 18, 2003",R,"Arizona,Santa Clara"
 MEM,25-26,bassech01,Charles Bassey,False,28,C,6-10,230,"October 28, 2000",4,Western Kentucky
 MEM,25-26,burtoty01,Tyler Burton,False,5,SF,6-7,215,"February 11, 2000",R,"Richmond,Villanova"
@@ -2970,7 +2937,6 @@ MEM,25-26,jacksgg01,GG Jackson II,False,45,PF,6-9,210,"December 17, 2004",2,Sout
 MEM,25-26,jacksja02,Jaren Jackson Jr.,False,8,C,6-10,242,"September 15, 1999",7,Michigan State
 MEM,25-26,jarrede01,DeJon Jarreau,False,77,SG,6-5,185,"January 23, 1998",2,"UMass,Houston"
 MEM,25-26,jeromty01,Ty Jerome,False,2,SG,6-5,195,"July 8, 1997",6,Virginia
-MEM,25-26,kolokch01,Christian Koloko,False,35,C,6-11,225,"June 20, 2000",2,Arizona
 MEM,25-26,konchjo01,John Konchar,False,46,SG,6-5,210,"March 22, 1996",6,Purdue-Fort Wayne
 MEM,25-26,landajo01,Jock Landale,False,31,C,6-11,255,"October 25, 1995",4,Saint Mary's
 MEM,25-26,loverla01,Lawson Lovering,False,34,C,7-0,245,"May 9, 2003",R,"Colorado,Utah"
@@ -3123,9 +3089,7 @@ ORL,25-26,robinor01,Orlando Robinson,False,7,C,6-10,235,"July 10, 2000",3,Fresno
 ORL,25-26,suggsja01,Jalen Suggs,False,4,PG,6-5,205,"June 3, 2001",4,Gonzaga
 ORL,25-26,wagnefr01,Franz Wagner,False,22,SF,6-10,220,"August 27, 2001",4,Michigan
 ORL,25-26,wagnemo01,Moritz Wagner,False,21,C,6-11,245,"April 26, 1997",7,Michigan
-PHI,25-26,baldwpa01,Patrick Baldwin Jr.,False,35,SF,7-0,220,"November 18, 2002",3,UW-Milwaukee
 PHI,25-26,barlodo01,Dominick Barlow,False,25,PF,6-9,215,"May 26, 2003",3,
-PHI,25-26,bassech01,Charles Bassey,False,28,C,6-10,230,"October 28, 2000",4,Western Kentucky
 PHI,25-26,beaucma01,MarJon Beauchamp,False,16,SF,6-7,199,"October 12, 2000",3,Yakima Valley Community College
 PHI,25-26,bonaad01,Adem Bona,False,30,C,6-10,235,"March 28, 2003",1,UCLA
 PHI,25-26,broomjo01,Johni Broome,False,22,C,6-10,235,"July 19, 2002",R,"Morehead State University,Auburn"

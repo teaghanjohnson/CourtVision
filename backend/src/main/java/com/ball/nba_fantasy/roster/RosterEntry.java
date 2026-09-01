@@ -13,7 +13,7 @@ import java.time.LocalDate;
 public class RosterEntry {
 
     @Id
-    private String nbaPlayerId;
+    private String playerId;
     @Id
     private String team;
     @Id
@@ -27,7 +27,8 @@ public class RosterEntry {
     private String height;
     private Integer weight;
     private LocalDate birthDate;
-    private double age;
+    private Double age;
+    private Boolean twoWay;
     private String exp;
     private String school;
     private String howAcquired;
@@ -35,10 +36,10 @@ public class RosterEntry {
     public RosterEntry() {
     }
 
-    public RosterEntry(String nbaPlayerId, String team, String year, String player, String nickname,
+    public RosterEntry(String playerId, String team, String year, String player, String nickname,
                        String playerSlug, String num, String position, String height, Integer weight,
-                       LocalDate birthDate, double age, String exp, String school, String howAcquired) {
-        this.nbaPlayerId = nbaPlayerId;
+                       LocalDate birthDate, Double age, Boolean twoWay, String exp, String school, String howAcquired) {
+        this.playerId = playerId;
         this.team = team;
         this.year = year;
         this.player = player;
@@ -50,12 +51,13 @@ public class RosterEntry {
         this.weight = weight;
         this.birthDate = birthDate;
         this.age = age;
+        this.twoWay = twoWay;
         this.exp = exp;
         this.school = school;
         this.howAcquired = howAcquired;
     }
 
-    public String getNbaPlayerId() { return nbaPlayerId; }
+    public String getPlayerId() { return playerId; }
     public String getTeam() { return team; }
     public String getYear() { return year; }
     public String getPlayer() { return player; }
@@ -66,13 +68,14 @@ public class RosterEntry {
     public String getHeight() { return height; }
     public Integer getWeight() { return weight; }
     public LocalDate getBirthDate() { return birthDate; }
-    public double getAge() { return age; }
+    public Double getAge() { return age; }
+    public Boolean getTwoWay() { return twoWay; }
     public String getExp() { return exp; }
     public String getSchool() { return school; }
     public String getHowAcquired() { return howAcquired; }
 
-    public void setNbaPlayerId(String nbaPlayerId) {
-        this.nbaPlayerId = nbaPlayerId;
+    public void setPlayerId(String playerId) {
+        this.playerId = playerId;
     }
 
     public void setTeam(String team) {
@@ -115,8 +118,12 @@ public class RosterEntry {
         this.birthDate = birthDate;
     }
 
-    public void setAge(double age) {
+    public void setAge(Double age) {
         this.age = age;
+    }
+
+    public void setTwoWay(Boolean twoWay) {
+        this.twoWay = twoWay;
     }
 
     public void setExp(String exp) {
