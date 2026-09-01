@@ -35,12 +35,11 @@
 
 @layer components {
   .buttons-container {
-    @apply cursor-pointer flex-row place-content-start items-start min-w-min min-h-min gap-[10px] flex relative mx-auto my-0 py-2 px-4;
+    @apply relative mx-auto my-0 flex w-min h-min flex-row place-content-start items-start gap-[10px] px-4 py-2;
   }
-}
-@layer components {
+
   .team-btns {
-    @apply bg-[#e0deda] rounded-[8px] border-none opacity-100 will-change-auto text-[16px] pt-[10px];
+    @apply min-w-[140px] cursor-pointer rounded-[8px] border-none bg-[#e0deda] px-8 py-[10px] text-center text-[13px] hover:bg-[#c0bdbd];
     font-family: var(--font-dm-sans), "DM Sans Placeholder", sans-serif;
   }
 }
@@ -54,4 +53,15 @@ body {
 
 .subtitle-fade {
   animation: fadeIn 2.5s 2.5s backwards;
+}
+
+.content-table {
+  background: white;
+
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 1rem;
 }
