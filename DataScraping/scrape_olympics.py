@@ -76,9 +76,40 @@ def extract_json_objects(text: str, marker: str) -> list[dict]:
           break
       i += 1
     else:
-      continue  # never closed, malformed — skip
+      continue  
     try:
       results.append(json.loads(text[start : i + 1]))
     except json.JSONDecodeError:
       continue
   return results
+
+def scrape_team(slug: str, code: str) -> tuple[dict | None, list[dict]]:
+    """Fetch one team's page and return (team_profile_or_None, list_of_players)."""
+
+    url = BASE_URL.format(slug=slug)
+    resp = requests.get(url, headers=HEADERS, timeout=20)
+    resp.raise_for_status()
+    flight = extract_flight_text(resp.text)
+ 
+    team_candidates = extract_json_objects(flight, '"profile":{"teamId"')
+    player_candidates = extract_json_objects(flight, '"playerId":')
+
+    # Dedupe players by playerID
+    players_by_id: dict[int, dict] = {}
+    for p in player_candidates:
+      pid = p.get("playerId")
+      if pid is not None:
+        players_by_id[pid] = p # last one wins
+
+    players = list(players_by_id.values())
+    for p in players:
+      p["teamCode"] = code # connect to frontend abbrev
+
+    team = None
+    if team_candidates:
+      team = team_candidates[0]
+      team["teamCode"] = code
+
+    return team,players
+
+ 
