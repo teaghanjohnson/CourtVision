@@ -56,6 +56,33 @@ export const COLUMNS: Column[] = [
   { key: "plusMinusPerGame", label: "+/-" },
 ];
 
+// Per-game averages: always shown to one decimal (e.g. 14 -> "14.0").
+const AVERAGED_KEYS = new Set<Column["key"]>([
+  "mpg",
+  "ppg",
+  "rpg",
+  "apg",
+  "stl",
+  "blk",
+  "tov",
+  "pfpg",
+  "effpg",
+  "plusMinusPerGame",
+]);
+
+// Percentages arrive from FIBA already on a 0-100 scale.
+const PERCENT_KEYS = new Set<Column["key"]>(["fgPct", "tpPct", "ftPct"]);
+
+const formatCell = (key: Column["key"], value: string | number) => {
+  if (typeof value === "number" && PERCENT_KEYS.has(key)) {
+    return `${value.toFixed(1)}%`;
+  }
+  if (typeof value === "number" && AVERAGED_KEYS.has(key)) {
+    return value.toFixed(1);
+  }
+  return String(value);
+};
+
 const fullName = (p: Player) => `${p.firstName} ${p.lastName}`;
 
 const ageOn = (dateOfBirth: string, on = new Date("2024-08-10")) => {
@@ -73,8 +100,8 @@ const cellValue = (player: Player, key: Column["key"]) => {
 };
 
 export default function NationPlayersTable({ players }: { players: Player[] }) {
-  const [sortColumn, setSortColumn] = useState<Column["key"]>("uniformNumber");
-  const [sortDirection, setSortDirection] = useState<"asc" | "desc">("asc");
+  const [sortColumn, setSortColumn] = useState<Column["key"]>("ppg");
+  const [sortDirection, setSortDirection] = useState<"asc" | "desc">("desc");
 
   const handleSort = (key: Column["key"]) => {
     if (key === sortColumn) {
@@ -136,7 +163,7 @@ export default function NationPlayersTable({ players }: { players: Player[] }) {
           <tr key={player.playerId}>
             {COLUMNS.map((col) => (
               <td key={col.key} className="px-2 py-1">
-                {String(cellValue(player, col.key))}
+                {formatCell(col.key, cellValue(player, col.key))}
               </td>
             ))}
           </tr>
