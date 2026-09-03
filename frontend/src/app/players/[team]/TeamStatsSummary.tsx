@@ -77,6 +77,13 @@ export type Column = {
   label: string;
 };
 
+const formatCell = (key: keyof Team, value: Team[keyof Team]) => {
+  if (typeof value === "number" && String(key).endsWith("Pct")) {
+    return `${(value * 100).toFixed(1)}%`;
+  }
+  return value;
+};
+
 export const COLUMNS: Column[] = [
   { key: "teamName", label: "Team" },
   { key: "gp", label: "GP" },
@@ -203,7 +210,7 @@ export default function TeamStatsSummary({
           <tr key={`${team.teamId}-${team.year}`}>
             {COLUMNS.map((col) => (
               <td key={col.key} className="px-2 py-1">
-                {team[col.key]}
+                {formatCell(col.key, team[col.key])}
               </td>
             ))}
           </tr>

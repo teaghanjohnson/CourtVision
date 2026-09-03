@@ -47,8 +47,27 @@ export type Column = {
 
 const POSITION_ORDER = ["PG", "SG", "SF", "PF", "C"];
 
-const formatCell = (value: Player[keyof Player]) => {
-  if (typeof value === "number" && Number.isInteger(value)) {
+const AVERAGED_KEYS = new Set<keyof Player>([
+  "ppg",
+  "orpg",
+  "rpg",
+  "apg",
+  "spg",
+  "bpg",
+  "topg",
+  "mpg",
+  "fpg",
+]);
+
+const formatCell = (key: keyof Player, value: Player[keyof Player]) => {
+  if (typeof value === "number" && String(key).endsWith("Pct")) {
+    return `${(value * 100).toFixed(1)}%`;
+  }
+  if (
+    typeof value === "number" &&
+    Number.isInteger(value) &&
+    AVERAGED_KEYS.has(key)
+  ) {
     return value.toFixed(1);
   }
   return value;
@@ -155,7 +174,7 @@ export default function TeamPlayersTable({
               <td key={col.key} className="px-2 py-1">
                 {col.key === "team"
                   ? displayAbbrev(String(player[col.key]))
-                  : formatCell(player[col.key])}
+                  : formatCell(col.key, player[col.key])}
               </td>
             ))}
           </tr>

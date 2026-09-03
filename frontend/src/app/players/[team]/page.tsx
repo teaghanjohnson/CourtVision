@@ -1,7 +1,7 @@
 import { getTeamLogo, TEAM_MAP } from "@/constants/teamColors";
 import Image from "next/image";
 import { Player } from "./TeamPlayersTable";
-import Sidebar from "@/components/Sidebar/Sidebar";
+
 import TeamDashboard from "./TeamDashboard";
 import { Team } from "./TeamStatsSummary";
 import { RosterEntry } from "./TeamRoster";
@@ -65,7 +65,6 @@ export default async function TeamPlayersPage({
 
   return (
     <>
-      <Sidebar />
       <div className="flex items-center gap-25 mt-30">
         <Image src={getTeamLogo(team)} alt={team} width={80} height={80} />
         <h1 className="text-2xl font-semibold">{teamName}</h1>

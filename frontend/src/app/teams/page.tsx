@@ -2,6 +2,7 @@
 
 import { getTeamLogo, TEAM_MAP } from "@/constants/teamColors";
 import Image from "next/image";
+import Sidebar from "@/components/Sidebar/Sidebar";
 import Link from "next/link";
 import { useState } from "react";
 
@@ -28,8 +29,9 @@ export default function teamGrid() {
         className="absolute z-2 w-full h-full object-cover"
       />
       <div className="absolute inset-0 z-2 bg-gradient-to-b from-white to-black opacity-0 transition-all duration-300 ease-[cubic-bezier(0.645,0.045,0.355,1)] group-hover:opacity-[0.35]" />
+      <div className="absolute inset-x-0 bottom-0 z-2 h-[10px] bg-gradient-to-t from-black/70 to-transparent pointer-events-none" />
       <div
-        className="absolute inset-x-0 bottom-0 z-3 flex items-center justify-between p-[15px_20px]
+        className="absolute inset-x-0 bottom-0 z-3 flex items-center justify-between p-[15px_20px] drop-shadow-black
 translate-y-full group-hover:translate-y-0
 transition-transform duration-300 ease-[cubic-bezier(0.645,0.045,0.355,1)]"
       >
@@ -57,16 +59,16 @@ transition-transform duration-300 ease-[cubic-bezier(0.645,0.045,0.355,1)]"
 
   return (
     <>
-      <div className="pl-10 pr-10 w-full h-full">
-        <div className="flex items-center justify-between mt-[120px]">
+      <Sidebar />
+      <div className="pl-30 pr-30 w-full h-full">
+        <div className="flex flex-col items-left justify-between mt-[120px]">
           <div
             style={{
               fontFamily: "var(--font-libre-baskerville), serif",
               color: "white",
               fontStyle: "italic",
               fontSize: "50px",
-              fontFeatureSettings:
-                '"dlig" on, "frac" on, "sups" on, "sinf" on',
+              fontFeatureSettings: '"dlig" on, "frac" on, "sups" on, "sinf" on',
             }}
           >
             TEAMS
@@ -74,13 +76,13 @@ transition-transform duration-300 ease-[cubic-bezier(0.645,0.045,0.355,1)]"
           <input
             type="text"
             name="searchBar"
-            className="w-[300px] px-6 py-3 text-[16px] text-black bg-white rounded-full shadow-md border border-gray-200 outline-none focus:ring-2 focus:ring-[#5faceb]"
-            placeholder="Search"
+            className="w-[500px] mt-10 px-6 py-1 text-[16px] text-black bg-white rounded-full shadow-md border border-gray-200 outline-none focus:ring-2 focus:ring-[#5faceb]"
+            placeholder="Search for teams"
             value={search}
             onChange={(e) => setSearch(e.target.value)}
           />
         </div>
-        <div className="mt-30 mb-30 grid grid-cols-3 gap-25 pb-100">
+        <div className="mt-30 mb-30 grid grid-cols-4 gap-25 pb-100">
           {teamCells}
         </div>
       </div>

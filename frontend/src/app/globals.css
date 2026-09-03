@@ -43,6 +43,21 @@
     font-family: var(--font-dm-sans), "DM Sans Placeholder", sans-serif;
   }
 }
+
+@keyframes pageIn {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.page-transition {
+  animation: pageIn 0.6s ease-out backwards;
+}
+
 body {
   background: linear-gradient(to bottom, #1170b8, #ec9c67);
   display: block;
