@@ -7,11 +7,24 @@ export type Player = {
   firstName: string;
   lastName: string;
   uniformNumber: string;
-  positionCode: string;
+  position: string;
   nationality: string;
-  gamesPlayed: number;
   dateOfBirth: string;
   teamCode: string;
+  gp: number;
+  mpg: number;
+  ppg: number;
+  rpg: number;
+  apg: number;
+  stl: number;
+  blk: number;
+  fgPct: number;
+  tpPct: number;
+  ftPct: number;
+  tov: number;
+  pfpg: number;
+  effpg: number;
+  plusMinusPerGame: number;
 };
 
 export type Column = {
@@ -24,10 +37,23 @@ const POSITION_ORDER = ["PG", "G", "SG", "SF", "F", "PF", "C"];
 export const COLUMNS: Column[] = [
   { key: "uniformNumber", label: "#" },
   { key: "name", label: "Player" },
-  { key: "positionCode", label: "Pos" },
+  { key: "position", label: "Pos" },
   { key: "nationality", label: "Nat" },
-  { key: "gamesPlayed", label: "GP" },
   { key: "age", label: "Age" },
+  { key: "gp", label: "GP" },
+  { key: "mpg", label: "MPG" },
+  { key: "ppg", label: "PPG" },
+  { key: "rpg", label: "RPG" },
+  { key: "apg", label: "APG" },
+  { key: "stl", label: "SPG" },
+  { key: "blk", label: "BPG" },
+  { key: "fgPct", label: "FG%" },
+  { key: "tpPct", label: "3P%" },
+  { key: "ftPct", label: "FT%" },
+  { key: "tov", label: "TOV" },
+  { key: "pfpg", label: "PF" },
+  { key: "effpg", label: "EFF" },
+  { key: "plusMinusPerGame", label: "+/-" },
 ];
 
 const fullName = (p: Player) => `${p.firstName} ${p.lastName}`;
@@ -56,16 +82,16 @@ export default function NationPlayersTable({ players }: { players: Player[] }) {
     } else {
       setSortColumn(key);
       setSortDirection(
-        key === "name" || key === "positionCode" ? "asc" : "desc",
+        key === "name" || key === "position" ? "asc" : "desc",
       );
     }
   };
 
   const sortedPlayers = [...players].sort((a, b) => {
-    if (sortColumn === "positionCode") {
+    if (sortColumn === "position") {
       const cmp =
-        POSITION_ORDER.indexOf(a.positionCode) -
-        POSITION_ORDER.indexOf(b.positionCode);
+        POSITION_ORDER.indexOf(a.position) -
+        POSITION_ORDER.indexOf(b.position);
       return sortDirection === "desc" ? -cmp : cmp;
     }
 
