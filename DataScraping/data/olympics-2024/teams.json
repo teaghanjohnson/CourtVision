@@ -1,0 +1,526 @@
+[
+  {
+    "teamId": 281542,
+    "teamCode": "AUS",
+    "shortName": "Australia",
+    "profile": {
+      "teamId": 281542,
+      "organisationId": 16,
+      "name": "Australia",
+      "code": "AUS",
+      "countryName": "Australia",
+      "countryCode": "AUS",
+      "gender": "Men",
+      "email": "",
+      "facebook": null,
+      "twitter": null,
+      "instagram": null,
+      "website": "http://www.australia.basketball",
+      "youTube": null,
+      "finalRanking": 6,
+      "pointsPerGame": 84,
+      "reboundsPerGame": 40.3,
+      "assistsPerGame": 19.8,
+      "rankPointsPerGame": 5,
+      "rankReboundsPerGame": 2,
+      "rankAssistsPerGame": 5,
+      "totalGamesWon": 1,
+      "totalGamesLost": 3,
+      "socialNetworks": [
+        {
+          "name": "Web Site",
+          "value": "http://www.australia.basketball"
+        },
+        {
+          "name": "Facebook",
+          "value": "BasketballAustralia"
+        }
+      ],
+      "competitionId": 208722
+    },
+    "statusCode": "APPR",
+    "statusName": "Approved",
+    "organisationId": 16,
+    "slug": "australia"
+  },
+  {
+    "teamId": 282020,
+    "teamCode": "BRA",
+    "shortName": "Brazil",
+    "profile": {
+      "teamId": 282020,
+      "organisationId": 27,
+      "name": "Brazil",
+      "code": "BRA",
+      "countryName": "Brazil",
+      "countryCode": "BRA",
+      "gender": "Men",
+      "email": "",
+      "facebook": null,
+      "twitter": null,
+      "instagram": null,
+      "website": "http://www.cbb.com.br",
+      "youTube": null,
+      "finalRanking": 7,
+      "pointsPerGame": 82,
+      "reboundsPerGame": 37.5,
+      "assistsPerGame": 20.8,
+      "rankPointsPerGame": 9,
+      "rankReboundsPerGame": 6,
+      "rankAssistsPerGame": 4,
+      "totalGamesWon": 1,
+      "totalGamesLost": 3,
+      "socialNetworks": [
+        {
+          "name": "Web Site",
+          "value": "http://www.cbb.com.br"
+        }
+      ],
+      "competitionId": 208722
+    },
+    "statusCode": "APPR",
+    "statusName": "Approved",
+    "organisationId": 27,
+    "slug": "brazil"
+  },
+  {
+    "teamId": 281543,
+    "teamCode": "CAN",
+    "shortName": "Canada",
+    "profile": {
+      "teamId": 281543,
+      "organisationId": 34,
+      "name": "Canada",
+      "code": "CAN",
+      "countryName": "Canada",
+      "countryCode": "CAN",
+      "gender": "Men",
+      "email": "",
+      "facebook": null,
+      "twitter": null,
+      "instagram": null,
+      "website": "www.basketball.ca",
+      "youTube": null,
+      "finalRanking": 5,
+      "pointsPerGame": 85,
+      "reboundsPerGame": 33.8,
+      "assistsPerGame": 17.8,
+      "rankPointsPerGame": 4,
+      "rankReboundsPerGame": 12,
+      "rankAssistsPerGame": 11,
+      "totalGamesWon": 3,
+      "totalGamesLost": 1,
+      "socialNetworks": [
+        {
+          "name": "Web Site",
+          "value": "www.basketball.ca"
+        }
+      ],
+      "competitionId": 208722
+    },
+    "statusCode": "APPR",
+    "statusName": "Approved",
+    "organisationId": 34,
+    "slug": "canada"
+  },
+  {
+    "teamId": 281544,
+    "teamCode": "FRA",
+    "shortName": "France",
+    "profile": {
+      "teamId": 281544,
+      "organisationId": 59,
+      "name": "France",
+      "code": "FRA",
+      "countryName": "France",
+      "countryCode": "FRA",
+      "gender": "Men",
+      "email": "",
+      "facebook": null,
+      "twitter": null,
+      "instagram": null,
+      "website": "http://www.ffbb.com ",
+      "youTube": null,
+      "finalRanking": 2,
+      "pointsPerGame": 80.8,
+      "reboundsPerGame": 36.2,
+      "assistsPerGame": 19.8,
+      "rankPointsPerGame": 10,
+      "rankReboundsPerGame": 9,
+      "rankAssistsPerGame": 5,
+      "totalGamesWon": 4,
+      "totalGamesLost": 2,
+      "socialNetworks": [
+        {
+          "name": "Web Site",
+          "value": "http://www.ffbb.com "
+        },
+        {
+          "name": "Facebook",
+          "value": "ffbasketball"
+        },
+        {
+          "name": "Twitter",
+          "value": "ffbasketball"
+        },
+        {
+          "name": "Instagram",
+          "value": "ffbb_officiel"
+        }
+      ],
+      "competitionId": 208722
+    },
+    "statusCode": "APPR",
+    "statusName": "Approved",
+    "organisationId": 59,
+    "slug": "france"
+  },
+  {
+    "teamId": 281545,
+    "teamCode": "GER",
+    "shortName": "Germany",
+    "profile": {
+      "teamId": 281545,
+      "organisationId": 64,
+      "name": "Germany",
+      "code": "GER",
+      "countryName": "Germany",
+      "countryCode": "GER",
+      "gender": "Men",
+      "email": "",
+      "facebook": null,
+      "twitter": null,
+      "instagram": null,
+      "website": "http://www.basketball-bund.de",
+      "youTube": null,
+      "finalRanking": 4,
+      "pointsPerGame": 82.7,
+      "reboundsPerGame": 34.8,
+      "assistsPerGame": 19.2,
+      "rankPointsPerGame": 8,
+      "rankReboundsPerGame": 10,
+      "rankAssistsPerGame": 7,
+      "totalGamesWon": 4,
+      "totalGamesLost": 2,
+      "socialNetworks": [
+        {
+          "name": "Web Site",
+          "value": "http://www.basketball-bund.de"
+        }
+      ],
+      "competitionId": 208722
+    },
+    "statusCode": "APPR",
+    "statusName": "Approved",
+    "organisationId": 64,
+    "slug": "germany"
+  },
+  {
+    "teamId": 282018,
+    "teamCode": "GRE",
+    "shortName": "Greece",
+    "profile": {
+      "teamId": 282018,
+      "organisationId": 67,
+      "name": "Greece",
+      "code": "GRE",
+      "countryName": "Greece",
+      "countryCode": "GRE",
+      "gender": "Men",
+      "email": "",
+      "facebook": null,
+      "twitter": null,
+      "instagram": null,
+      "website": "http://www.basket.gr",
+      "youTube": null,
+      "finalRanking": 8,
+      "pointsPerGame": 74,
+      "reboundsPerGame": 34,
+      "assistsPerGame": 19,
+      "rankPointsPerGame": 12,
+      "rankReboundsPerGame": 11,
+      "rankAssistsPerGame": 8,
+      "totalGamesWon": 1,
+      "totalGamesLost": 3,
+      "socialNetworks": [
+        {
+          "name": "Web Site",
+          "value": "http://www.basket.gr"
+        }
+      ],
+      "competitionId": 208722
+    },
+    "statusCode": "APPR",
+    "statusName": "Approved",
+    "organisationId": 67,
+    "slug": "greece"
+  },
+  {
+    "teamId": 281546,
+    "teamCode": "JPN",
+    "shortName": "Japan",
+    "profile": {
+      "teamId": 281546,
+      "organisationId": 85,
+      "name": "Japan",
+      "code": "JPN",
+      "countryName": "Japan",
+      "countryCode": "JPN",
+      "gender": "Men",
+      "email": "",
+      "facebook": null,
+      "twitter": null,
+      "instagram": null,
+      "website": "http://www.japanbasketball.jp",
+      "youTube": null,
+      "finalRanking": 11,
+      "pointsPerGame": 83.7,
+      "reboundsPerGame": 38,
+      "assistsPerGame": 16.3,
+      "rankPointsPerGame": 6,
+      "rankReboundsPerGame": 5,
+      "rankAssistsPerGame": 12,
+      "totalGamesWon": 0,
+      "totalGamesLost": 3,
+      "socialNetworks": [
+        {
+          "name": "Web Site",
+          "value": "http://www.japanbasketball.jp"
+        },
+        {
+          "name": "Twitter",
+          "value": "japanbasketball"
+        }
+      ],
+      "competitionId": 208722
+    },
+    "statusCode": "APPR",
+    "statusName": "Approved",
+    "organisationId": 85,
+    "slug": "japan"
+  },
+  {
+    "teamId": 282019,
+    "teamCode": "PUR",
+    "shortName": "Puerto Rico",
+    "profile": {
+      "teamId": 282019,
+      "organisationId": 125,
+      "name": "Puerto Rico",
+      "code": "PUR",
+      "countryName": "Puerto Rico",
+      "countryCode": "PUR",
+      "gender": "Men",
+      "email": "",
+      "facebook": null,
+      "twitter": null,
+      "instagram": null,
+      "website": "http://www.puertorico.basketball",
+      "youTube": null,
+      "finalRanking": 12,
+      "pointsPerGame": 76,
+      "reboundsPerGame": 37.3,
+      "assistsPerGame": 18.7,
+      "rankPointsPerGame": 11,
+      "rankReboundsPerGame": 7,
+      "rankAssistsPerGame": 9,
+      "totalGamesWon": 0,
+      "totalGamesLost": 3,
+      "socialNetworks": [
+        {
+          "name": "Web Site",
+          "value": "http://www.puertorico.basketball"
+        }
+      ],
+      "competitionId": 208722
+    },
+    "statusCode": "APPR",
+    "statusName": "Approved",
+    "organisationId": 125,
+    "slug": "puerto-rico"
+  },
+  {
+    "teamId": 281547,
+    "teamCode": "SRB",
+    "shortName": "Serbia",
+    "profile": {
+      "teamId": 281547,
+      "organisationId": 8323,
+      "name": "Serbia",
+      "code": "SRB",
+      "countryName": "Serbia",
+      "countryCode": "SRB",
+      "gender": "Men",
+      "email": "",
+      "facebook": null,
+      "twitter": null,
+      "instagram": null,
+      "website": "http://www.kss.rs",
+      "youTube": null,
+      "finalRanking": 3,
+      "pointsPerGame": 94.3,
+      "reboundsPerGame": 38.8,
+      "assistsPerGame": 24.2,
+      "rankPointsPerGame": 2,
+      "rankReboundsPerGame": 4,
+      "rankAssistsPerGame": 2,
+      "totalGamesWon": 4,
+      "totalGamesLost": 2,
+      "socialNetworks": [
+        {
+          "name": "Web Site",
+          "value": "http://www.kss.rs"
+        }
+      ],
+      "competitionId": 208722
+    },
+    "statusCode": "APPR",
+    "statusName": "Approved",
+    "organisationId": 8323,
+    "slug": "serbia"
+  },
+  {
+    "teamId": 281548,
+    "teamCode": "SSD",
+    "shortName": "South Sudan",
+    "profile": {
+      "teamId": 281548,
+      "organisationId": 9716,
+      "name": "South Sudan",
+      "code": "SSD",
+      "countryName": "South Sudan",
+      "countryCode": "SSD",
+      "gender": "Men",
+      "email": "",
+      "facebook": null,
+      "twitter": null,
+      "instagram": null,
+      "website": "www.ssbfed.com",
+      "youTube": null,
+      "finalRanking": 9,
+      "pointsPerGame": 87,
+      "reboundsPerGame": 42.7,
+      "assistsPerGame": 18.3,
+      "rankPointsPerGame": 3,
+      "rankReboundsPerGame": 1,
+      "rankAssistsPerGame": 10,
+      "totalGamesWon": 1,
+      "totalGamesLost": 2,
+      "socialNetworks": [
+        {
+          "name": "Web Site",
+          "value": "www.ssbfed.com"
+        }
+      ],
+      "competitionId": 208722
+    },
+    "statusCode": "APPR",
+    "statusName": "Approved",
+    "organisationId": 9716,
+    "slug": "south-sudan"
+  },
+  {
+    "teamId": 282021,
+    "teamCode": "ESP",
+    "shortName": "Spain",
+    "profile": {
+      "teamId": 282021,
+      "organisationId": 138,
+      "name": "Spain",
+      "code": "ESP",
+      "countryName": "Spain",
+      "countryCode": "ESP",
+      "gender": "Men",
+      "email": "",
+      "facebook": null,
+      "twitter": null,
+      "instagram": null,
+      "website": "http://www.feb.es",
+      "youTube": null,
+      "finalRanking": 10,
+      "pointsPerGame": 83,
+      "reboundsPerGame": 37,
+      "assistsPerGame": 21.3,
+      "rankPointsPerGame": 7,
+      "rankReboundsPerGame": 8,
+      "rankAssistsPerGame": 3,
+      "totalGamesWon": 1,
+      "totalGamesLost": 2,
+      "socialNetworks": [
+        {
+          "name": "Web Site",
+          "value": "http://www.feb.es"
+        },
+        {
+          "name": "Facebook",
+          "value": "baloncestofeb"
+        },
+        {
+          "name": "Twitter",
+          "value": "baloncestofeb"
+        },
+        {
+          "name": "Instagram",
+          "value": "baloncestofeb"
+        }
+      ],
+      "competitionId": 208722
+    },
+    "statusCode": "APPR",
+    "statusName": "Approved",
+    "organisationId": 138,
+    "slug": "spain"
+  },
+  {
+    "teamId": 281549,
+    "teamCode": "USA",
+    "shortName": "USA",
+    "profile": {
+      "teamId": 281549,
+      "organisationId": 154,
+      "name": "USA",
+      "code": "USA",
+      "countryName": "USA",
+      "countryCode": "USA",
+      "gender": "Men",
+      "email": "",
+      "facebook": null,
+      "twitter": null,
+      "instagram": null,
+      "website": "http://www.usabasketball.com",
+      "youTube": null,
+      "finalRanking": 1,
+      "pointsPerGame": 105.3,
+      "reboundsPerGame": 39.8,
+      "assistsPerGame": 28,
+      "rankPointsPerGame": 1,
+      "rankReboundsPerGame": 3,
+      "rankAssistsPerGame": 1,
+      "totalGamesWon": 6,
+      "totalGamesLost": 0,
+      "socialNetworks": [
+        {
+          "name": "Web Site",
+          "value": "http://www.usabasketball.com"
+        },
+        {
+          "name": "Facebook",
+          "value": "usabasketball"
+        },
+        {
+          "name": "Twitter",
+          "value": "usabasketball"
+        },
+        {
+          "name": "Instagram",
+          "value": "usabasketball"
+        }
+      ],
+      "competitionId": 208722
+    },
+    "statusCode": "APPR",
+    "statusName": "Approved",
+    "organisationId": 154,
+    "slug": "usa"
+  }
+]
