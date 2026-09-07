@@ -68,11 +68,8 @@ export type Team = {
   oppFg3Pct: number | null;
   oppFtPct: number | null;
 };
-// Per-game and rate stats that should always render with a decimal, even when
-// the value happens to land on a whole number. Counting totals (gp, w, l, poss)
-// and the *Pct fields are intentionally excluded.
+
 const AVERAGED_KEYS = new Set<keyof Team>([
-  "min",
   "fgm",
   "fga",
   "fg3m",
