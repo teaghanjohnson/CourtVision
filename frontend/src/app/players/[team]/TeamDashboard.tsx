@@ -13,16 +13,21 @@ export default function TeamDashboard({
   roster,
   years,
   defaultYear,
+  leagueWide = false,
 }: {
   players: Player[];
   teamStats: Team[];
   roster: RosterEntry[];
   years: string[];
   defaultYear: string;
+  leagueWide?: boolean;
 }) {
   const [activeTab, setActiveTab] = useState<Tab>("playerStats");
   const [selectedYear, setSelectedYear] = useState(defaultYear);
   const yearsDescending = [...years].reverse();
+
+  const tab: Tab =
+    leagueWide && activeTab === "roster" ? "playerStats" : activeTab;
 
   return (
     <div>
@@ -39,9 +44,11 @@ export default function TeamDashboard({
       </select>
       <div className="overflow-x-auto">
         <div className="buttons-container">
-          <button className="team-btns" onClick={() => setActiveTab("roster")}>
-            Roster
-          </button>
+          {!leagueWide && (
+            <button className="team-btns" onClick={() => setActiveTab("roster")}>
+              Roster
+            </button>
+          )}
           <button
             className="team-btns"
             onClick={() => setActiveTab("playerStats")}
@@ -55,13 +62,13 @@ export default function TeamDashboard({
             Team Stats
           </button>
         </div>
-        {activeTab === "roster" && (
+        {!leagueWide && tab === "roster" && (
           <TeamRoster roster={roster} selectedYear={selectedYear} />
         )}
-        {activeTab === "playerStats" && (
+        {tab === "playerStats" && (
           <TeamPlayersTable players={players} selectedYear={selectedYear} />
         )}
-        {activeTab === "teamStats" && (
+        {tab === "teamStats" && (
           <TeamStatsSummary teamStats={teamStats} selectedYear={selectedYear} />
         )}
       </div>

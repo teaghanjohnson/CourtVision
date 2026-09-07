@@ -6,11 +6,8 @@ export type Team = {
   teamName: string;
   year: string;
   team: string;
-
-  gp: number;
   w: number;
   l: number;
-  min: number;
   fgm: number;
   fga: number;
   fg3m: number;
@@ -71,7 +68,55 @@ export type Team = {
   oppFg3Pct: number | null;
   oppFtPct: number | null;
 };
-
+// Per-game and rate stats that should always render with a decimal, even when
+// the value happens to land on a whole number. Counting totals (gp, w, l, poss)
+// and the *Pct fields are intentionally excluded.
+const AVERAGED_KEYS = new Set<keyof Team>([
+  "min",
+  "fgm",
+  "fga",
+  "fg3m",
+  "fg3a",
+  "ftm",
+  "fta",
+  "oreb",
+  "dreb",
+  "reb",
+  "ast",
+  "tov",
+  "stl",
+  "blk",
+  "blka",
+  "pf",
+  "pfd",
+  "pts",
+  "plusMinus",
+  "offRating",
+  "defRating",
+  "netRating",
+  "astTo",
+  "astRatio",
+  "pace",
+  "pacePer40",
+  "pie",
+  "oppFgm",
+  "oppFga",
+  "oppFg3m",
+  "oppFg3a",
+  "oppFtm",
+  "oppFta",
+  "oppOreb",
+  "oppDreb",
+  "oppReb",
+  "oppAst",
+  "oppTov",
+  "oppStl",
+  "oppBlk",
+  "oppBlka",
+  "oppPf",
+  "oppPfd",
+  "oppPts",
+]);
 export type Column = {
   key: keyof Team;
   label: string;
@@ -81,16 +126,21 @@ const formatCell = (key: keyof Team, value: Team[keyof Team]) => {
   if (typeof value === "number" && String(key).endsWith("Pct")) {
     return `${(value * 100).toFixed(1)}%`;
   }
+  if (
+    typeof value === "number" &&
+    Number.isInteger(value) &&
+    AVERAGED_KEYS.has(key)
+  ) {
+    return value.toFixed(1);
+  }
   return value;
 };
 
 export const COLUMNS: Column[] = [
   { key: "teamName", label: "Team" },
-  { key: "gp", label: "GP" },
   { key: "w", label: "W" },
   { key: "l", label: "L" },
   { key: "winPct", label: "WIN%" },
-  { key: "min", label: "MIN" },
   { key: "pts", label: "PTS" },
   { key: "fgm", label: "FGM" },
   { key: "fga", label: "FGA" },
@@ -108,7 +158,6 @@ export const COLUMNS: Column[] = [
   { key: "tov", label: "TOV" },
   { key: "stl", label: "STL" },
   { key: "blk", label: "BLK" },
-  { key: "blka", label: "BLKA" },
   { key: "pf", label: "PF" },
   { key: "pfd", label: "PFD" },
   { key: "plusMinus", label: "+/-" },
@@ -129,8 +178,6 @@ export const COLUMNS: Column[] = [
   { key: "poss", label: "POSS" },
   { key: "pie", label: "PIE" },
   { key: "oppPts", label: "OPP PTS" },
-  { key: "oppFgm", label: "OPP FGM" },
-  { key: "oppFga", label: "OPP FGA" },
   { key: "oppFgPct", label: "OPP FG%" },
   { key: "oppFg3m", label: "OPP 3PM" },
   { key: "oppFg3a", label: "OPP 3PA" },

@@ -122,28 +122,23 @@ export const TEAM_MAP: Record<string, TeamAbbrev> = {
   "Toronto Raptors": "TOR",
   "Utah Jazz": "UTA",
   "Washington Wizards": "WAS",
+  "League-Wide": "NBA",
 };
 
-// Path to a team's logo in /public/images/NBA (e.g. getTeamLogo('LAL') -> "/images/NBA/LAL.png")
 export function getTeamLogo(abbrev: string): string {
   return `/images/NBA/${abbrev}.png`;
 }
 
-// [primary, secondary, tertiary] hex colors for a team abbreviation
 export function getTeamColors(abbrev: TeamAbbrev): TeamColorTriple {
   return TEAM_COLORS[abbrev] ?? TEAM_COLORS.NBA;
 }
 
-// Display-only overrides: changes abbreviations for these teams in the frontend
-// more commonly used abbreviations better for NBA branding synergy
 const DISPLAY_ABBREV_OVERRIDES: Partial<Record<TeamAbbrev, string>> = {
   BRK: "BKN",
   CHO: "CHA",
   PHO: "PHX",
 };
 
-// Team abbreviation as shown to users. Handles a traded player's team field, which can
-// be a hyphenated chain like "LAL-BRK" rather than a single code.
 export function displayAbbrev(abbrev: string): string {
   return abbrev
     .split("-")

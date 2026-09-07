@@ -12,14 +12,15 @@ export default async function TeamPlayersPage({
   params: Promise<{ team: string }>;
 }) {
   const { team } = await params;
-  const teamName = Object.entries(TEAM_MAP).find(
-    ([, abbrev]) => abbrev === team,
-  )?.[0];
+  const isLeague = team === "NBA";
+  const teamName = isLeague
+    ? "NBA"
+    : Object.entries(TEAM_MAP).find(([, abbrev]) => abbrev === team)?.[0];
 
   let players: Player[];
   try {
     const res = await fetch(
-      `${process.env.NEXT_PUBLIC_API_URL}/api/v1/player?team=${team}`,
+      `${process.env.NEXT_PUBLIC_API_URL}/api/v1/player${isLeague ? "" : `?team=${team}`}`,
     );
 
     if (!res.ok) {
@@ -31,12 +32,13 @@ export default async function TeamPlayersPage({
   }
 
   const years = Array.from(new Set(players.map((p) => p.year))).sort();
+  const defaultYear = years[years.length - 1];
 
   let teamStats: Team[];
 
   try {
     const res = await fetch(
-      `${process.env.NEXT_PUBLIC_API_URL}/api/v1/team?team=${team}`,
+      `${process.env.NEXT_PUBLIC_API_URL}/api/v1/team${isLeague ? "" : `?team=${team}`}`,
     );
     if (!res.ok) {
       return "cannot load team stats";
@@ -46,22 +48,21 @@ export default async function TeamPlayersPage({
     return "cannot load team stats";
   }
 
-  let roster: RosterEntry[];
-  try {
-    const responses = await Promise.all(
-      years.map((year) =>
-        fetch(
-          `${process.env.NEXT_PUBLIC_API_URL}/api/v1/roster?team=${team}&year=${year}`,
+  let roster: RosterEntry[] = [];
+  if (!isLeague) {
+    try {
+      const responses = await Promise.all(
+        years.map((year) =>
+          fetch(
+            `${process.env.NEXT_PUBLIC_API_URL}/api/v1/roster?team=${team}&year=${year}`,
+          ),
         ),
-      ),
-    );
-    const rosterArrays = await Promise.all(responses.map((r) => r.json()));
-    roster = rosterArrays.flat();
-  } catch {
-    return "cannot load roster";
+      );
+      roster = (await Promise.all(responses.map((r) => r.json()))).flat();
+    } catch {
+      return "cannot load roster";
+    }
   }
-
-  const defaultYear = years[years.length - 1];
 
   return (
     <>
@@ -75,6 +76,7 @@ export default async function TeamPlayersPage({
         roster={roster}
         years={years}
         defaultYear={defaultYear}
+        leagueWide={isLeague}
       />
     </>
   );
