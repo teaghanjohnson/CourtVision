@@ -15,7 +15,7 @@ export type RosterEntry = {
   height: string;
   weight: number | null;
   birthDate: string | null;
-  age: number;
+  age: number | null;
   exp: string;
   school: string | null;
   howAcquired: string | null;
@@ -38,6 +38,21 @@ export const COLUMNS: Column[] = [
   { key: "howAcquired", label: "How Acquired" },
 ];
 
+function setSeasonAge(birthDate: string | null, year: string): number | null {
+  if (!birthDate) {
+    return null;
+  }
+
+  const [by, bm, bd] = birthDate.split("-").map(Number);
+  const endYy = Number(year.split("-")[1]);
+
+  if ([by, bm, bd, endYy].some((n) => Number.isNaN(n))) return null;
+
+  const asOfYear = 2000 + endYy;
+  const birthdayReached = bm < 2 || (bm === 2 && bd <= 1);
+  return asOfYear - by - (birthdayReached ? 0 : 1);
+}
+
 export default function TeamRoster({
   roster,
   selectedYear,
@@ -57,7 +72,9 @@ export default function TeamRoster({
     }
   };
 
-  const filteredRoster = roster.filter((r) => r.year === selectedYear);
+  const filteredRoster = roster
+    .filter((r) => r.year === selectedYear)
+    .map((r) => ({ ...r, age: setSeasonAge(r.birthDate, r.year) }));
 
   const sortedRoster = [...filteredRoster].sort((a, b) => {
     const aVal = a[sortColumn];
