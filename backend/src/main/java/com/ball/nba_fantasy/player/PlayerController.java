@@ -1,15 +1,19 @@
 package com.ball.nba_fantasy.player;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
 @RestController
-@RequestMapping(path="api/v1/player")
+@RequestMapping(path = "api/v1/player")
 public class PlayerController {
+
+    /** Hard ceiling on rows returned by a single request. */
+    private static final int MAX_RESULTS = 10_000;
 
     private final PlayerService playerService;
 
@@ -24,37 +28,6 @@ public class PlayerController {
             @RequestParam(required = false) String name,
             @RequestParam(required = false) String position,
             @RequestParam(required = false) String year) {
-        if (team != null && position != null) {
-            return playerService.getPlayersByTeamAndPositionAndYear(team, position, year);
-        } else if (team != null) {
-            return playerService.getPlayersFromTeamAndYear(team, year);
-        } else if (name != null) {
-            return playerService.getPlayersByNameAndYear(name, year);
-        } else if (position != null) {
-            return playerService.getPlayerByPosAndYear(position, year);
-        } else {
-            return playerService.getPlayers();
-            }
-    }
-
-    @PostMapping
-    public ResponseEntity<Player> addPlayer(@RequestBody Player player){
-        Player createdPlayer = playerService.addPlayer(player);
-        return new ResponseEntity<>(createdPlayer, HttpStatus.CREATED);
-    }
-
-    @PutMapping
-    public ResponseEntity<Player> updatePlayer(@RequestBody Player player) {
-        Player resultPlayer = playerService.updatePlayer(player);
-        if (resultPlayer != null) {
-            return new ResponseEntity<>(resultPlayer, HttpStatus.OK);
-        } else {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        }
-    }
-    @DeleteMapping("/{playerName}")
-    public ResponseEntity<String> deletePlayer(@PathVariable String playerName) {
-        playerService.deletePlayer(playerName);
-        return new ResponseEntity<>("Player deleted successfully", HttpStatus.OK);
+        return playerService.search(team, name, position, year, MAX_RESULTS);
     }
 }

@@ -9,7 +9,6 @@ import org.springframework.stereotype.Component;
 
 import java.util.Collections;
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Component
 public class RosterEntryService {
@@ -25,17 +24,12 @@ public class RosterEntryService {
     }
 
     public List<RosterEntry> getRoster(String team, String year) {
-        return rosterEntryRepository.findAll().stream()
-                .filter(entry -> team.equals(entry.getTeam()) && year.equals(entry.getYear()))
-                .collect(Collectors.toList());
+        return rosterEntryRepository.findByTeamAndYear(team, year);
     }
 
     public PlayerDetailResponse getPlayerDetail(String playerId, String team, String year) {
-        RosterEntry bio = rosterEntryRepository.findAll().stream()
-                .filter(entry -> playerId.equals(entry.getPlayerId())
-                        && team.equals(entry.getTeam())
-                        && year.equals(entry.getYear()))
-                .findFirst()
+        RosterEntry bio = rosterEntryRepository
+                .findByPlayerIdAndTeamAndYear(playerId, team, year)
                 .orElse(null);
 
         if (bio == null) {
@@ -45,9 +39,7 @@ public class RosterEntryService {
 
         // roster and player stats now share the same basketball-reference player ID
         // scheme, so this is an exact match - no more name-based fuzzy matching
-        List<Player> stats = playerRepository.findAll().stream()
-                .filter(p -> playerId.equals(p.getPlayerId()) && team.equals(p.getTeam()))
-                .collect(Collectors.toList());
+        List<Player> stats = playerRepository.findByPlayerIdAndTeam(playerId, team);
 
         if (stats.isEmpty()) {
             log.warn("No Player stats matched for playerId={} on team {}", playerId, team);

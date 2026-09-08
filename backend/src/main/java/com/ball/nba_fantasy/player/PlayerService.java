@@ -1,12 +1,11 @@
 package com.ball.nba_fantasy.player;
 
-import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
-import java.util.Optional;
-import java.util.stream.Collectors;
 
 @Component
 public class PlayerService {
@@ -14,67 +13,49 @@ public class PlayerService {
 
     @Autowired
     public PlayerService(PlayerRepository playerRepository) {
-        this.playerRepository =  playerRepository;
+        this.playerRepository = playerRepository;
     }
 
-    public List<Player> getPlayers(){
-        return playerRepository.findAll();
-    }
+    /**
+     * Returns players matching the supplied filters. Blank/null filters are
+     * ignored. Never returns more than {@code maxResults} rows, so an unfiltered
+     * request cannot load an unbounded amount of data. Filtering happens in the
+     * database.
+     */
+    public List<Player> search(String team, String name, String position, String year, int maxResults) {
+        team = blankToNull(team);
+        name = blankToNull(name);
+        position = blankToNull(position);
+        year = blankToNull(year);
+        Pageable page = PageRequest.of(0, maxResults);
 
-    public List<Player> getPlayersByYear(String year) {
-        return playerRepository.findAll().stream().filter(player -> year.equals(player.getYear()))
-                .collect(Collectors.toList());
-    }
-
-    public List<Player> getPlayersFromTeamAndYear(String teamName, String year) {
-        return playerRepository.findAll().stream()
-                .filter(player -> teamName.equals(player.getTeam()) && (year == null || year.equals(player.getYear())))
-                .collect(Collectors.toList());
-
-    }
-    public List<Player> getPlayersByNameAndYear(String searchText, String year) {
-        return playerRepository.findAll().stream()
-                .filter(player -> player.getPlayer().toLowerCase().contains(searchText.toLowerCase()) && year.equals(player.getYear()))
-                .collect(Collectors.toList());
-    }
-
-    public List<Player> getPlayerByPosAndYear(String searchText, String year) {
-        return playerRepository.findAll().stream()
-                .filter(player ->
-                        player.getPosition().toLowerCase().contains(searchText.toLowerCase()) && year.equals(player.getYear()))
-                .collect(Collectors.toList());
-    }
-
-    public List<Player> getPlayersByTeamAndPositionAndYear(String team, String position, String year) {
-        return playerRepository.findAll().stream()
-                .filter(player -> team.equals(player.getTeam()) && position.equals(player.getPosition()) && year.equals(player.getYear()))
-                .collect(Collectors.toList());
-    }
-
-    public Player addPlayer(Player player) {
-        playerRepository.save(player);
-        return player;
-    }
-
-    public Player updatePlayer(Player updatePlayer) {
-        Optional<Player> existingPlayer = playerRepository.findByPlayer(updatePlayer.getPlayer());
-
-        if (existingPlayer.isPresent()) {
-           Player playerToUpdate = existingPlayer.get();
-           playerToUpdate.setPlayer(updatePlayer.getPlayer());
-           playerToUpdate.setTeam(updatePlayer.getTeam());
-           playerToUpdate.setPosition(updatePlayer.getPosition());
-
-           playerRepository.save(playerToUpdate);
-           return playerToUpdate;
+        if (team != null && position != null) {
+            return year != null
+                    ? playerRepository.findByTeamAndPositionAndYear(team, position, year, page)
+                    : playerRepository.findByTeamAndPosition(team, position, page);
         }
-        return null;
+        if (team != null) {
+            return year != null
+                    ? playerRepository.findByTeamAndYear(team, year, page)
+                    : playerRepository.findByTeam(team, page);
+        }
+        if (name != null) {
+            return year != null
+                    ? playerRepository.findByPlayerContainingIgnoreCaseAndYear(name, year, page)
+                    : playerRepository.findByPlayerContainingIgnoreCase(name, page);
+        }
+        if (position != null) {
+            return year != null
+                    ? playerRepository.findByPositionContainingIgnoreCaseAndYear(position, year, page)
+                    : playerRepository.findByPositionContainingIgnoreCase(position, page);
+        }
+        if (year != null) {
+            return playerRepository.findByYear(year, page);
+        }
+        return playerRepository.findAll(page).getContent();
     }
 
-    @Transactional
-    public void deletePlayer(String playerName) {
-        playerRepository.deleteByPlayer(playerName);
+    private static String blankToNull(String value) {
+        return (value == null || value.isBlank()) ? null : value;
     }
-
-
 }
