@@ -47,15 +47,13 @@
 @keyframes pageIn {
   from {
     opacity: 0;
-    transform: translateY(24px);
   }
   to {
     opacity: 1;
-    transform: translateY(0);
   }
 }
 .page-transition {
-  animation: pageIn 0.6s ease-out backwards;
+  animation: pageIn 0.6s ease-out both;
 }
 
 body {
@@ -88,4 +86,36 @@ th {
 
 tr:nth-of-type(2n) {
   background: hsl(0 0% 0% / 0.02);
+}
+
+
+/* Team / nation / position card grids: staggered slide-in on load (hover + overlay styling untouched) */
+@keyframes cardIn {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Same numbers as PLWebsite's .image-box: 2s slide, opacity 0 to start, forwards fill */
+.card-enter {
+  opacity: 0;
+  animation: cardIn 2s forwards;
+}
+
+/* Landing page title logo: same rotateIn timing as PLWebsite's home logo (1s linear, 1.4s delay, both) */
+.title-logo-spin {
+  animation: rotateIn 1s linear 1.4s both;
+}
+
+/* Same as PLWebsite's .flat-button / h2: fadeIn 1s, 1.8s delay */
+.enter-btn-fade {
+  animation: fadeIn 1s 1.8s both;
+}
+
+.search-bar-fade {
+  animation: fadeIn 0.6s 0.4s both;
 }

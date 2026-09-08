@@ -5,6 +5,7 @@ import Image from "next/image";
 import Sidebar from "@/components/Sidebar/Sidebar";
 import Link from "next/link";
 import { useState } from "react";
+import AnimatedHeader from "@/components/AnimatedLetters/AnimatedHeader";
 
 export default function teamGrid() {
   const [search, setSearch] = useState("");
@@ -14,11 +15,12 @@ export default function teamGrid() {
         teamName.toLowerCase().includes(search.toLowerCase()),
       )
     : teamEntries;
-  const teamCells = visibleTeamEntries.map(([teamName, team_abbrev]) => (
+  const teamCells = visibleTeamEntries.map(([teamName, team_abbrev], index) => (
     <Link
       key={team_abbrev}
       href={`players/${team_abbrev}`}
-      className="group relative h-[300px] overflow-hidden rounded-[15px]"
+      className="group relative h-[300px] overflow-hidden rounded-[15px] card-enter"
+      style={{ animationDelay: `${1 + (index + 1) / 3}s` }}
     >
       <Image
         src={getTeamLogo(team_abbrev)}
@@ -71,12 +73,12 @@ transition-transform duration-300 ease-[cubic-bezier(0.645,0.045,0.355,1)]"
               fontFeatureSettings: '"dlig" on, "frac" on, "sups" on, "sinf" on',
             }}
           >
-            TEAMS
+            <AnimatedHeader text="TEAMS" idx={6} />
           </div>
           <input
             type="text"
             name="searchBar"
-            className="w-[500px] mt-10 px-6 py-1 text-[16px] text-black bg-white rounded-full shadow-md border border-gray-200 outline-none focus:ring-2 focus:ring-[#5faceb]"
+            className="w-[500px] mt-10 px-6 py-1 text-[16px] text-black bg-white rounded-full shadow-md border border-gray-200 outline-none focus:ring-2 focus:ring-[#5faceb] search-bar-fade"
             placeholder="Search for teams"
             value={search}
             onChange={(e) => setSearch(e.target.value)}

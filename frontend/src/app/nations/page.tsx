@@ -4,6 +4,7 @@ import { getCountryLogo, COUNTRY_MAP } from "@/constants/nations";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import AnimatedHeader from "@/components/AnimatedLetters/AnimatedHeader";
 
 export default function nationGrid() {
   const [search, setSearch] = useState("");
@@ -14,11 +15,12 @@ export default function nationGrid() {
       )
     : nationEntries;
   const nationCells = visibleNationEntries.map(
-    ([nationName, nation_abbrev]) => (
+    ([nationName, nation_abbrev], index) => (
       <Link
         key={nation_abbrev}
         href={`nations/${nation_abbrev}`}
-        className="group relative h-[300px] overflow-hidden rounded-[15px]"
+        className="group relative h-[300px] overflow-hidden rounded-[15px] card-enter"
+        style={{ animationDelay: `${(index + 1) / 3}s` }}
       >
         <Image
           src={getCountryLogo(nation_abbrev)}
@@ -70,7 +72,7 @@ transition-transform duration-300 ease-[cubic-bezier(0.645,0.045,0.355,1)]"
               fontFeatureSettings: '"dlig" on, "frac" on, "sups" on, "sinf" on',
             }}
           >
-            NATIONS
+            <AnimatedHeader text="NATIONS" />
           </div>
           <input
             type="text"

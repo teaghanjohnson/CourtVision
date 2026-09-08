@@ -1,5 +1,6 @@
 import { getTeamLogo, TEAM_MAP } from "@/constants/teamColors";
 import Image from "next/image";
+import AnimatedHeader from "@/components/AnimatedLetters/AnimatedHeader";
 import { Player } from "./TeamPlayersTable";
 
 import TeamDashboard from "./TeamDashboard";
@@ -68,7 +69,9 @@ export default async function TeamPlayersPage({
     <>
       <div className="flex items-center gap-25 mt-30">
         <Image src={getTeamLogo(team)} alt={team} width={80} height={80} />
-        <h1 className="text-2xl font-semibold">{teamName}</h1>
+        <h1 className="text-2xl font-semibold">
+          <AnimatedHeader text={teamName ?? team} />
+        </h1>
       </div>
       <TeamDashboard
         players={players}

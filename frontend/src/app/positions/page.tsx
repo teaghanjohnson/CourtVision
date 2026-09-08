@@ -11,9 +11,10 @@ export default function positionGrid() {
       <Link
         key={positionAbbrev}
         href={`positions/${positionAbbrev}`}
-        className={`group relative h-[300px] overflow-hidden rounded-[15px] col-span-2 ${
+        className={`group relative h-[300px] overflow-hidden rounded-[15px] card-enter col-span-2 ${
           index === 3 ? "col-start-2" : index === 4 ? "col-start-4" : ""
         }`}
+        style={{ animationDelay: `${(index + 1) / 3}s` }}
       >
         <Image
           src={getPositionLogo(positionAbbrev)}

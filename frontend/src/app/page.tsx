@@ -70,7 +70,7 @@ export default function Page() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setLetterClass("text-animate-hover");
-    }, 4000);
+    }, 6000);
     return () => clearTimeout(timer);
   }, []);
   return (
@@ -83,6 +83,7 @@ export default function Page() {
             width={500}
             height={73}
             priority
+            className="title-logo-spin"
           />
           <div
             className="ml-10 text-4xl font-bold text-white"
@@ -91,18 +92,22 @@ export default function Page() {
             <AnimatedLetters
               letterClass={letterClass}
               strArray={nameArray}
-              idx={1}
+              idx={12}
             />
           </div>
           <div
-            className="ml-10 text-rg text-white subtitle-fade"
+            className="ml-10 text-rg text-white"
             style={{ fontFamily: "Coolvetica, Arial, sans-serif" }}
           >
-            {subArray.join("")}
+            <AnimatedLetters
+              letterClass={letterClass}
+              strArray={subArray}
+              idx={15}
+            />
           </div>
           <Link
             href="/teams"
-            className="w-22 ml-10 text-center text-white text-[13px] font-bold tracking-[4px] font-sans no-underline py-[10px] px-[18px] rounded-[7px] bg-[#5faceb] mt-[25px] float-left whitespace-nowrap transition-all duration-300 ease-in-out hover:bg-white hover:text-[#5faceb]"
+            className="w-22 ml-10 text-center text-white text-[13px] font-bold tracking-[4px] font-sans no-underline py-[10px] px-[18px] rounded-[7px] bg-[#5faceb] mt-[25px] float-left whitespace-nowrap transition-all duration-300 ease-in-out hover:bg-white hover:text-[#5faceb] enter-btn-fade"
           >
             Enter
           </Link>

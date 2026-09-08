@@ -170,11 +170,16 @@ export default function InertiaLogo({ size = 460 }: InertiaLogoProps) {
       containerRef.current,
       {
         opacity: 0,
+        scale: 0.4,
+        rotateY: -180,
       },
       {
         opacity: 1,
-        delay: 4,
-        duration: 4,
+        scale: 1,
+        rotateY: 0,
+        delay: 0.1,
+        duration: 1,
+        ease: "back.out(1.7)",
       },
     );
   }, []);
@@ -187,6 +192,7 @@ export default function InertiaLogo({ size = 460 }: InertiaLogoProps) {
         height: size,
         maxWidth: "62vw",
         maxHeight: "62vw",
+        perspective: "1000px",
       }}
     >
       <div

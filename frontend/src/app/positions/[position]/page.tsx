@@ -1,14 +1,12 @@
-import TeamPlayersTable, {Player} from "@/app/players/[team]/TeamPlayersTable";{ Player } from "@/app/players/[team]/TeamPlayersTable";
-import { POSITION_MAP } from "@/constants/positions";
+import { Player } from "@/app/players/[team]/TeamPlayersTable";
+import PositionDashboard from "./PositionDashboard";
+
 export default async function PlayerPositionPage({
   params,
 }: {
   params: Promise<{ position: string }>;
 }) {
   const { position } = await params;
-  const allPos = Object.entries(POSITION_MAP).find(
-    ([, abbrev]) => abbrev === position,
-  )?.[0];
   let players: Player[];
   try {
     const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/v1/player`);
@@ -26,12 +24,10 @@ export default async function PlayerPositionPage({
   const defaultYear = years[years.length - 1];
 
   return (
-    <>
-      <PositionDashboard
-        players={positionPlayers}
-        years={years}
-        defaultYear={defaultYear}
-      />
-    </>
+    <PositionDashboard
+      players={positionPlayers}
+      years={years}
+      defaultYear={defaultYear}
+    />
   );
 }
