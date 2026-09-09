@@ -148,38 +148,42 @@ export default function TeamPlayersTable({
   });
 
   return (
-    <table className="content-table">
-      <thead>
-        <tr>
-          {COLUMNS.map((col) => (
-            <th
-              key={col.key}
-              onClick={() => handleSort(col.key)}
-              className="px-2 py-1 text-left font-semibold cursor-pointer"
-            >
-              {col.label}
-              {col.key === sortColumn && (
-                <span className="ml-1">
-                  {sortDirection === "desc" ? "▼" : "▲"}
-                </span>
-              )}
-            </th>
-          ))}
-        </tr>
-      </thead>
-      <tbody>
-        {sortedPlayers.map((player) => (
-          <tr key={player.playerId}>
-            {COLUMNS.map((col) => (
-              <td key={col.key} className="px-2 py-1">
-                {col.key === "team"
-                  ? displayAbbrev(String(player[col.key]))
-                  : formatCell(col.key, player[col.key])}
-              </td>
+    <div className="pt-10">
+      <div className="bg-[#5ba3d0] pb-10">
+        <table className="content-table">
+          <thead>
+            <tr>
+              {COLUMNS.map((col) => (
+                <th
+                  key={col.key}
+                  onClick={() => handleSort(col.key)}
+                  className="px-2 py-1 text-left font-semibold cursor-pointer"
+                >
+                  {col.label}
+                  {col.key === sortColumn && (
+                    <span className="ml-1">
+                      {sortDirection === "desc" ? "▼" : "▲"}
+                    </span>
+                  )}
+                </th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            {sortedPlayers.map((player) => (
+              <tr key={player.playerId}>
+                {COLUMNS.map((col) => (
+                  <td key={col.key} className="px-2 py-1">
+                    {col.key === "team"
+                      ? displayAbbrev(String(player[col.key]))
+                      : formatCell(col.key, player[col.key])}
+                  </td>
+                ))}
+              </tr>
             ))}
-          </tr>
-        ))}
-      </tbody>
-    </table>
+          </tbody>
+        </table>
+      </div>
+    </div>
   );
 }

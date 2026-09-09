@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { div } from "three/src/nodes/math/OperatorNode.js";
 
 export type RosterEntry = {
   playerId: string;
@@ -35,7 +36,6 @@ export const COLUMNS: Column[] = [
   { key: "age", label: "Age" },
   { key: "exp", label: "Exp" },
   { key: "school", label: "School" },
-  { key: "howAcquired", label: "How Acquired" },
 ];
 
 function setSeasonAge(birthDate: string | null, year: string): number | null {
@@ -92,36 +92,40 @@ export default function TeamRoster({
   });
 
   return (
-    <table className="content-table">
-      <thead>
-        <tr>
-          {COLUMNS.map((col) => (
-            <th
-              key={col.key}
-              onClick={() => handleSort(col.key)}
-              className="px-2 py-1 text-left font-semibold cursor-pointer"
-            >
-              {col.label}
-              {col.key === sortColumn && (
-                <span className="ml-1">
-                  {sortDirection === "desc" ? "▼" : "▲"}
-                </span>
-              )}
-            </th>
-          ))}
-        </tr>
-      </thead>
-      <tbody>
-        {sortedRoster.map((r) => (
-          <tr key={r.playerId}>
-            {COLUMNS.map((col) => (
-              <td key={col.key} className="px-2 py-1">
-                {r[col.key]}
-              </td>
+    <>
+      <div className="flex flex-col items-center gap-10 mt-10 pb-40">
+        <table className="content-table">
+          <thead>
+            <tr>
+              {COLUMNS.map((col) => (
+                <th
+                  key={col.key}
+                  onClick={() => handleSort(col.key)}
+                  className="px-2 py-1 text-left font-semibold cursor-pointer"
+                >
+                  {col.label}
+                  {col.key === sortColumn && (
+                    <span className="ml-1">
+                      {sortDirection === "desc" ? "▼" : "▲"}
+                    </span>
+                  )}
+                </th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            {sortedRoster.map((r) => (
+              <tr key={r.playerId}>
+                {COLUMNS.map((col) => (
+                  <td key={col.key} className="px-2 py-1">
+                    {r[col.key]}
+                  </td>
+                ))}
+              </tr>
             ))}
-          </tr>
-        ))}
-      </tbody>
-    </table>
+          </tbody>
+        </table>
+      </div>
+    </>
   );
 }
