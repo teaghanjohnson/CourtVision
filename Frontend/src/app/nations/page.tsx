@@ -1,34 +1,34 @@
 "use client";
 
-import { POSITION_MAP, getPositionLogo } from "@/constants/positions";
+import { getCountryLogo, COUNTRY_MAP } from "@/constants/nations";
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
+import AnimatedHeader from "@/components/AnimatedLetters/AnimatedHeader";
 
-export default function positionGrid() {
-  const positionEntries = Object.entries(POSITION_MAP);
-  const positionCells = positionEntries.map(
-    ([positionName, positionAbbrev], index) => (
+export default function nationGrid() {
+  const [search, setSearch] = useState("");
+  const nationEntries = Object.entries(COUNTRY_MAP);
+  const visibleNationEntries = search
+    ? nationEntries.filter(([nationName]) =>
+        nationName.toLowerCase().includes(search.toLowerCase()),
+      )
+    : nationEntries;
+  const nationCells = visibleNationEntries.map(
+    ([nationName, nation_abbrev], index) => (
       <Link
-        key={positionAbbrev}
-        href={`positions/${positionAbbrev}`}
-        className={`group relative h-[300px] overflow-hidden rounded-[15px] card-enter col-span-2 ${
-          index === 3 ? "col-start-2" : index === 4 ? "col-start-4" : ""
-        }`}
+        key={nation_abbrev}
+        href={`nations/${nation_abbrev}`}
+        className="group relative h-[300px] overflow-hidden rounded-[15px] card-enter"
         style={{ animationDelay: `${(index + 1) / 3}s` }}
       >
         <Image
-          src={getPositionLogo(positionAbbrev)}
-          alt={positionAbbrev}
+          src={getCountryLogo(nation_abbrev)}
+          alt={nation_abbrev}
           fill
           loading="eager"
           sizes="33vw"
-          className={`absolute z-2 w-full h-full object-cover ${
-            positionAbbrev === "PG"
-              ? "object-[center_5%]"
-              : positionAbbrev === "PF"
-                ? "object-[center_10%]"
-                : ""
-          }`}
+          className="absolute z-2 w-full h-full object-cover"
         />
         <div className="absolute inset-0 z-2 bg-gradient-to-b from-white to-black opacity-0 transition-all duration-300 ease-[cubic-bezier(0.645,0.045,0.355,1)] group-hover:opacity-[0.35]" />
         <div
@@ -43,7 +43,7 @@ transition-transform duration-300 ease-[cubic-bezier(0.645,0.045,0.355,1)]"
                 'var(--font-dm-sans), "DM Sans Placeholder", sans-serif',
             }}
           >
-            {positionName}
+            {nationName}
           </span>
           <button
             className="text-center text-white text-[11px] font-bold tracking-[4px] no-underline py-[6px] px-[14px] rounded-[7px] bg-[#5faceb] whitespace-nowrap transition-all duration-300 ease-in-out hover:bg-white hover:text-[#5faceb]"
@@ -62,7 +62,7 @@ transition-transform duration-300 ease-[cubic-bezier(0.645,0.045,0.355,1)]"
   return (
     <>
       <div className="pl-10 pr-10 w-full h-full">
-        <div className="flex items-center justify-between mt-[120px]">
+        <div className="flex flex-col items-left justify-between mt-[120px]">
           <div
             style={{
               fontFamily: "var(--font-libre-baskerville), serif",
@@ -72,11 +72,19 @@ transition-transform duration-300 ease-[cubic-bezier(0.645,0.045,0.355,1)]"
               fontFeatureSettings: '"dlig" on, "frac" on, "sups" on, "sinf" on',
             }}
           >
-            POSITIONS
+            <AnimatedHeader text="NATIONS" idx={6} />
           </div>
+          <input
+            type="text"
+            name="searchBar"
+            className="w-[500px] mt-10 px-6 py-1 text-[16px] text-black bg-white rounded-full shadow-md border border-gray-200 outline-none focus:ring-2 focus:ring-[#5faceb] search-bar-fade"
+            placeholder="Search for nations"
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+          />
         </div>
-        <div className="mt-30 mb-30 grid grid-cols-6 gap-25 pb-100">
-          {positionCells}
+        <div className="mt-30 mb-30 grid grid-cols-4 gap-25 pb-100">
+          {nationCells}
         </div>
       </div>
     </>

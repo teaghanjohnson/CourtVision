@@ -10,9 +10,15 @@ gsap.registerPlugin(Draggable, InertiaPlugin);
 
 interface InertiaLogoProps {
   size?: number;
+  offsetX?: number;
+  offsetY?: number;
 }
 
-export default function InertiaLogo({ size = 460 }: InertiaLogoProps) {
+export default function InertiaLogo({
+  size = 460,
+  offsetX = 0,
+  offsetY = 0,
+}: InertiaLogoProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const bgRef = useRef<HTMLDivElement>(null);
 
@@ -62,7 +68,6 @@ export default function InertiaLogo({ size = 460 }: InertiaLogoProps) {
       texture.colorSpace = THREE.SRGBColorSpace;
       texture.anisotropy = renderer.capabilities.getMaxAnisotropy();
 
-      // Cropped art is 404x679 (tight to the badge, no surrounding whitespace).
       const aspect = 404 / 679;
       const height = 340;
       const width = height * aspect;
@@ -193,6 +198,7 @@ export default function InertiaLogo({ size = 460 }: InertiaLogoProps) {
         maxWidth: "62vw",
         maxHeight: "62vw",
         perspective: "1000px",
+        transform: `translate(${offsetX}px, ${offsetY}px)`,
       }}
     >
       <div

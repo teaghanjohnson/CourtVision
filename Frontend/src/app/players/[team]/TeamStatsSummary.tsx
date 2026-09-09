@@ -230,7 +230,7 @@ export default function TeamStatsSummary({
   });
 
   return (
-    <table className="min-w-full text-sm">
+    <table className="content-table">
       <thead>
         <tr>
           {COLUMNS.map((col) => (

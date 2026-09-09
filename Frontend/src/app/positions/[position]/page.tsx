@@ -9,7 +9,9 @@ export default async function PlayerPositionPage({
   const { position } = await params;
   let players: Player[];
   try {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/v1/player`);
+    const res = await fetch(
+      `${process.env.NEXT_PUBLIC_API_URL}/api/v1/player?position=${position}`,
+    );
 
     if (!res.ok) {
       return "cannot load players";

@@ -1,5 +1,7 @@
 .nav-bar {
-  background: #cac7c6;
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.3)),
+    url("/hardwood.webp") center top / 100% auto no-repeat;
   height: 80px;
   width: 100%;
   position: absolute;
@@ -11,9 +13,12 @@
   align-items: center;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.6);
 
+  .sidebar-logo {
+    margin-left: 10px;
+  }
   .nav-links {
     font-size: 22px;
-    color: #4d4d4e;
+    color: #fff;
     display: flex;
     line-height: 51px;
     height: 51px;
@@ -21,13 +26,14 @@
     flex-direction: row;
     position: relative;
     text-align: center;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
+    gap: 20.5rem;
     padding: 0 6rem;
 
     a {
       font-size: 22px;
-      color: #4d4d4e;
+      color: #fff;
       display: block;
       line-height: 51px;
       height: 51px;
@@ -35,7 +41,7 @@
       text-decoration: none;
 
       &:hover {
-        color: black;
+        color: #fff;
 
         svg {
           opacity: 0;
@@ -77,11 +83,6 @@
     a.positions-link {
       &:after {
         content: "POSITIONS";
-      }
-    }
-    a.search-link {
-      &:after {
-        content: "SEARCH";
       }
     }
   }

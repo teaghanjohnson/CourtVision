@@ -1,6 +1,10 @@
 import "./globals.css";
+import "@fortawesome/fontawesome-svg-core/styles.css";
+import { config } from "@fortawesome/fontawesome-svg-core";
 import type { ReactNode } from "react";
 import { Libre_Baskerville, DM_Sans } from "next/font/google";
+
+config.autoAddCss = false;
 
 const libreBaskerville = Libre_Baskerville({
   subsets: ["latin"],

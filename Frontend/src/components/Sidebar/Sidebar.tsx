@@ -3,7 +3,6 @@ import Link from "next/link";
 import "./Sidebar.scss";
 import Image from "next/image";
 import {
-  faMagnifyingGlass,
   faFlag,
   faHome,
   faUsers,
@@ -17,10 +16,11 @@ export default function Sidebar() {
       <div className="nav-bar">
         <Link href="/">
           <Image
-            src="/courtvision-mark.png"
+            src="/courtvision-mark-cropped.png"
             alt="small-logo"
             width={40}
             height={40}
+            className="sidebar-logo"
           />
         </Link>
 
@@ -38,9 +38,6 @@ export default function Sidebar() {
           </Link>
           <Link href="/positions" className="positions-link">
             <FontAwesomeIcon icon={faUser} />
-          </Link>
-          <Link href="/search" className="search-link">
-            <FontAwesomeIcon icon={faMagnifyingGlass} />
           </Link>
         </div>
       </div>

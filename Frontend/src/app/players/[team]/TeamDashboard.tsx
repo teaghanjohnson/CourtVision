@@ -42,26 +42,26 @@ export default function TeamDashboard({
           </option>
         ))}
       </select>
+      <div className="buttons-container">
+        {!leagueWide && (
+          <button className="team-btns" onClick={() => setActiveTab("roster")}>
+            Roster
+          </button>
+        )}
+        <button
+          className="team-btns"
+          onClick={() => setActiveTab("playerStats")}
+        >
+          Player Stats
+        </button>
+        <button
+          className="team-btns"
+          onClick={() => setActiveTab("teamStats")}
+        >
+          Team Stats
+        </button>
+      </div>
       <div className="overflow-x-auto">
-        <div className="buttons-container">
-          {!leagueWide && (
-            <button className="team-btns" onClick={() => setActiveTab("roster")}>
-              Roster
-            </button>
-          )}
-          <button
-            className="team-btns"
-            onClick={() => setActiveTab("playerStats")}
-          >
-            Player Stats
-          </button>
-          <button
-            className="team-btns"
-            onClick={() => setActiveTab("teamStats")}
-          >
-            Team Stats
-          </button>
-        </div>
         {!leagueWide && tab === "roster" && (
           <TeamRoster roster={roster} selectedYear={selectedYear} />
         )}

@@ -18,7 +18,6 @@ const AnimatedHeader = ({ text, idx = 15 }: AnimatedHeaderProps) => {
       setLetterClass("text-animate-hover");
     }, finishMs);
     return () => clearTimeout(timer);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [text, idx]);
 
   return (

@@ -113,8 +113,8 @@ export default function Page() {
           </Link>
         </div>
 
-        <div className="flex mt-25 ml-15 justify-items-center justify-center min-h-screen text-center">
-          <InertiaLogo size={500} />
+        <div className="flex mt-25 ml-55 justify-items-center justify-center min-h-screen text-center">
+          <InertiaLogo size={500} offsetX={70} offsetY={110} />
         </div>
       </div>
     </>

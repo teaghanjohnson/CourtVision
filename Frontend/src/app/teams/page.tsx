@@ -2,7 +2,6 @@
 
 import { getTeamLogo, TEAM_MAP } from "@/constants/teamColors";
 import Image from "next/image";
-import Sidebar from "@/components/Sidebar/Sidebar";
 import Link from "next/link";
 import { useState } from "react";
 import AnimatedHeader from "@/components/AnimatedLetters/AnimatedHeader";
@@ -19,7 +18,7 @@ export default function teamGrid() {
     <Link
       key={team_abbrev}
       href={`players/${team_abbrev}`}
-      className="group relative h-[300px] overflow-hidden rounded-[15px] card-enter"
+      className="group relative h-[300px] w-[calc((100%_-_3_*_6.25rem)/4)] overflow-hidden rounded-[15px] card-enter"
       style={{ animationDelay: `${1 + (index + 1) / 3}s` }}
     >
       <Image
@@ -61,7 +60,6 @@ transition-transform duration-300 ease-[cubic-bezier(0.645,0.045,0.355,1)]"
 
   return (
     <>
-      <Sidebar />
       <div className="pl-30 pr-30 w-full h-full">
         <div className="flex flex-col items-left justify-between mt-[120px]">
           <div
@@ -84,7 +82,7 @@ transition-transform duration-300 ease-[cubic-bezier(0.645,0.045,0.355,1)]"
             onChange={(e) => setSearch(e.target.value)}
           />
         </div>
-        <div className="mt-30 mb-30 grid grid-cols-4 gap-25 pb-100">
+        <div className="mt-30 mb-30 flex flex-wrap justify-center gap-25 pb-100">
           {teamCells}
         </div>
       </div>
