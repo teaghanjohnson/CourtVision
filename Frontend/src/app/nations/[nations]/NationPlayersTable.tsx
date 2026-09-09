@@ -56,7 +56,6 @@ export const COLUMNS: Column[] = [
   { key: "plusMinusPerGame", label: "+/-" },
 ];
 
-// Per-game averages: always shown to one decimal (e.g. 14 -> "14.0").
 const AVERAGED_KEYS = new Set<Column["key"]>([
   "mpg",
   "ppg",
@@ -70,7 +69,6 @@ const AVERAGED_KEYS = new Set<Column["key"]>([
   "plusMinusPerGame",
 ]);
 
-// Percentages arrive from FIBA already on a 0-100 scale.
 const PERCENT_KEYS = new Set<Column["key"]>(["fgPct", "tpPct", "ftPct"]);
 
 const formatCell = (key: Column["key"], value: string | number) => {
@@ -108,22 +106,28 @@ export default function NationPlayersTable({ players }: { players: Player[] }) {
       setSortDirection(sortDirection === "desc" ? "asc" : "desc");
     } else {
       setSortColumn(key);
-      setSortDirection(
-        key === "name" || key === "position" ? "asc" : "desc",
-      );
+      setSortDirection(key === "name" || key === "position" ? "asc" : "desc");
     }
   };
 
   const sortedPlayers = [...players].sort((a, b) => {
     if (sortColumn === "position") {
       const cmp =
-        POSITION_ORDER.indexOf(a.position) -
-        POSITION_ORDER.indexOf(b.position);
+        POSITION_ORDER.indexOf(a.position) - POSITION_ORDER.indexOf(b.position);
       return sortDirection === "desc" ? -cmp : cmp;
     }
 
     const aVal = cellValue(a, sortColumn);
     const bVal = cellValue(b, sortColumn);
+
+    const isMissing = (v: string | number) =>
+      v == null || (typeof v === "number" && Number.isNaN(v));
+    const aMissing = isMissing(aVal);
+    const bMissing = isMissing(bVal);
+    if (aMissing || bMissing) {
+      if (aMissing && bMissing) return 0;
+      return aMissing ? 1 : -1;
+    }
 
     if (sortColumn === "uniformNumber") {
       const cmp = Number(aVal) - Number(bVal);

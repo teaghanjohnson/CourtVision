@@ -34,7 +34,7 @@ export default function TeamDashboard({
       <select
         value={selectedYear}
         onChange={(e) => setSelectedYear(e.target.value)}
-        className="mb-4 rounded border px-2 py-1"
+        className="mb-4 rounded border cursor-pointer px-2 py-1 ml-10"
       >
         {yearsDescending.map((year) => (
           <option key={year} value={year}>
@@ -54,10 +54,7 @@ export default function TeamDashboard({
         >
           Player Stats
         </button>
-        <button
-          className="team-btns"
-          onClick={() => setActiveTab("teamStats")}
-        >
+        <button className="team-btns" onClick={() => setActiveTab("teamStats")}>
           Team Stats
         </button>
       </div>

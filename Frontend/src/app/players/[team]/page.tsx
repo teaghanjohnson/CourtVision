@@ -67,9 +67,16 @@ export default async function TeamPlayersPage({
 
   return (
     <>
-      <div className="flex items-center gap-25 mt-30">
+      <div className="flex items-center gap-25 mt-30 ml-10 mb-10">
         <Image src={getTeamLogo(team)} alt={team} width={80} height={80} />
-        <h1 className="text-2xl font-semibold">
+        <h1
+          className="text-2xl font-semibold text-white"
+          style={{
+            fontFamily: "var(--font-libre-baskerville), serif",
+            fontStyle: "italic",
+            fontFeatureSettings: '"dlig" on, "frac" on, "sups" on, "sinf" on',
+          }}
+        >
           <AnimatedHeader text={teamName ?? team} />
         </h1>
       </div>

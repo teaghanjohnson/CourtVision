@@ -23,16 +23,27 @@ export default async function NationsPlayerPage({
 
   return (
     <>
-      <div className="flex items-center gap-25 mt-30">
-        <Image
-          src={getCountryLogo(nations)}
-          alt={nations}
-          width={80}
-          height={80}
-        />
-        <h1 className="text-2xl font-semibold">{nationName}</h1>
+      <div className="flex flex-col items-center gap-10 mt-30 pb-40">
+        <div className="flex items-center gap-25">
+          <Image
+            src={getCountryLogo(nations)}
+            alt={nations}
+            width={80}
+            height={80}
+          />
+          <h1
+            className="text-2xl font-semibold text-white"
+            style={{
+              fontFamily: "var(--font-libre-baskerville), serif",
+              fontStyle: "italic",
+              fontFeatureSettings: '"dlig" on, "frac" on, "sups" on, "sinf" on',
+            }}
+          >
+            {nationName}
+          </h1>
+        </div>
+        <NationPlayersTable players={players} />
       </div>
-      <NationPlayersTable players={players} />
     </>
   );
 }
