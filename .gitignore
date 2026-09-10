@@ -18,3 +18,6 @@ target/
 
 # Env files
 .env
+
+#Claude
+.claude/
