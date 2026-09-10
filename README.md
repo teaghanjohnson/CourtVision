@@ -2,6 +2,8 @@
 
 A full-stack NBA stats and scouting web app for browsing teams, players, positions, and national-team rosters, backed by a scraped-and-curated Postgres dataset served through a read-only REST API.
 
+**Live demo:** [court-vision-tan.vercel.app](https://court-vision-tan.vercel.app)
+
 ## What it does
 
 - **Browse by Team** — all 30 NBA franchises, each with a full current roster and player stat tables (sortable columns, null values pinned to the bottom).
