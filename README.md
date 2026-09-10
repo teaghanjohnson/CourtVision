@@ -52,7 +52,26 @@ npm install
 npm run dev
 ```
 
-**Docker**: both `Backend/Dockerfile` and `Frontend/Dockerfile` are multi-stage builds ready for deployment — configure the env vars above (plus `NEXT_PUBLIC_API_URL` for the frontend build) at run time.
+**Docker**: both `Backend/Dockerfile` and `Frontend/Dockerfile` are multi-stage builds ready for deployment.
+
+## Deploying
+
+Required environment variables (see `Backend/secrets.env.example` and `Frontend/.env.example` for templates — fill in your real values, never commit them):
+
+**Backend** — set at container *runtime*:
+- `DB_URL`, `DB_USERNAME`, `DB_PASSWORD` — your production Postgres.
+- `CORS_ALLOWED_ORIGINS` — the real deployed frontend origin (not `localhost:3000`).
+- `DDL_AUTO` — leave unset (defaults to `validate`) once the schema exists; see "First deploy" below.
+
+**Frontend** — `NEXT_PUBLIC_API_URL` must be passed as a Docker **build** argument, not a runtime env var:
+
+```bash
+docker build --build-arg NEXT_PUBLIC_API_URL=https://your-backend-domain -t courtvision-frontend ./Frontend
+```
+
+Next.js inlines `NEXT_PUBLIC_*` variables into the compiled app at build time, so setting it with `docker run -e` afterward has no effect. The Dockerfile now fails the build if this arg is left empty, so a forgotten value is caught immediately instead of silently shipping a frontend that can't reach the API.
+
+**First deploy to a fresh database**: `DDL_AUTO=validate` (the default) intentionally never creates tables — it only checks the schema matches. Before the very first deploy, start the backend once against the empty production database with `DDL_AUTO=update` so Hibernate creates the tables, then redeploy/restart with `DDL_AUTO` unset (or `=validate`) for every deploy after that. Data itself is loaded separately by the `DataScraping` pipeline, as noted above.
 
 ## Roadmap
 
